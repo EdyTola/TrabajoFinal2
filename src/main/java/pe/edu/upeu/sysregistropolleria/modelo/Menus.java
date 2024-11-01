@@ -15,15 +15,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-
 @Entity
-@Table(name = "upeu_categoria")
-public class Categoria {
+@Table(name = "upeu_menu")  // Asegúrate que esta tabla exista en tu base de datos
+public class Menus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_categoria")
-    private Long idCategoria;
-    @Column(name = "nombre", nullable = false, length = 60)
-    private String nombre;
+    @Column(name = "id_menu")
+    private Long idMenu;
 
+    @Column(name = "Pedido", nullable = false, length = 60)
+    private String nombre;
 }
