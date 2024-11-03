@@ -24,12 +24,13 @@ public class TableViewHelper<T> {
 
             // Detectar si el campo es un objeto complejo o una propiedad básica
             if (field.contains(".")) {
-
                 column.setCellValueFactory(cellData -> {
-
                     T item = cellData.getValue();
-                    String[] fieldPath = field.split("\\.");
+                    if (item == null) {
+                        return new SimpleObjectProperty<>("N/A"); // Manejar caso de item nulo
+                    }
 
+                    String[] fieldPath = field.split("\\.");
                     try {
                         Object value = item.getClass().getMethod("get" + capitalize(fieldPath[0])).invoke(item);
                         if (value != null) {
@@ -40,7 +41,7 @@ public class TableViewHelper<T> {
                         e.printStackTrace();
                     }
 
-                    return new SimpleObjectProperty("N/A");
+                    return new SimpleObjectProperty<>("N/A"); // Valor por defecto si no se puede obtener
                 });
             } else {
                 column.setCellValueFactory(new PropertyValueFactory<>(field));
@@ -65,7 +66,6 @@ public class TableViewHelper<T> {
             @Override
             public TableCell<T, Void> call(final TableColumn<T, Void> param) {
                 final TableCell<T, Void> cell = new TableCell<>() {
-
                     // Crear las imágenes
                     Image updateImage = new Image(getClass().getResource("/img/document-edit-icon.png").toExternalForm());
                     Image deleteImage = new Image(getClass().getResource("/img/del-icon.png").toExternalForm());
@@ -74,22 +74,23 @@ public class TableViewHelper<T> {
                     ImageView updateImageView = new ImageView(updateImage);
                     ImageView deleteImageView = new ImageView(deleteImage);
 
-
-
                     // Crear botones con los íconos en lugar de texto
                     private final Button btnUpdate = new Button("", updateImageView);
                     private final Button btnDelete = new Button("", deleteImageView);
 
-
                     {
                         btnUpdate.setOnAction(event -> {
                             T data = getTableView().getItems().get(getIndex());
-                            updateAction.accept(data);  // Llama a la función pasada como parámetro para actualizar
+                            if (data != null) {
+                                updateAction.accept(data);  // Llama a la función pasada como parámetro para actualizar
+                            }
                         });
 
                         btnDelete.setOnAction(event -> {
                             T data = getTableView().getItems().get(getIndex());
-                            deleteAction.accept(data);  // Llama a la función pasada como parámetro para eliminar
+                            if (data != null) {
+                                deleteAction.accept(data);  // Llama a la función pasada como parámetro para eliminar
+                            }
                         });
                     }
 
@@ -120,7 +121,4 @@ public class TableViewHelper<T> {
         }
         return str.substring(0, 1).toUpperCase() + str.substring(1);
     }
-
-
 }
-

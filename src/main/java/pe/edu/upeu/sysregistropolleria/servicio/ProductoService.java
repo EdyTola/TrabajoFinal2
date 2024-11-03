@@ -16,35 +16,42 @@ public class ProductoService {
 
     @Autowired
     ProductoRepository repo;
-    Logger logger= LoggerFactory.getLogger(ProductoService.class);
+    Logger logger = LoggerFactory.getLogger(ProductoService.class);
 
-    public Producto save(Producto to){
+    public Producto save(Producto to) {
         return repo.save(to);
     }
-    public List<Producto> list(){
+
+    public List<Producto> list() {
         return repo.findAll();
     }
-    public Producto update(Producto to, Long id){
+
+    public Producto update(Producto to, Long id) {
         try {
-            Producto toe=repo.findById(id).get();
-            if(toe!=null){
+            Producto toe = repo.findById(id).orElse(null); // Cambiado a orElse(null)
+            if (toe != null) {
                 toe.setNombre(to.getNombre());
+                toe.setMenu(to.getMenu()); // Actualiza el menú si es necesario
+                toe.setReserva(to.getReserva()); // Actualiza la reserva si es necesario
+                toe.setPrecio(to.getPrecio()); // Actualiza el precio si es necesario
+                return repo.save(toe);
             }
-            return repo.save(toe);
-        }catch (Exception e){
-            System.out.println("Error: "+ e.getMessage());
+        } catch (Exception e) {
+            logger.error("Error al actualizar el producto: {}", e.getMessage());
         }
         return null;
     }
 
-    public Producto update(Producto to){
+    public Producto update(Producto to) {
         return repo.save(to);
     }
-    public void delete(Long id){
+
+    public void delete(Long id) {
         repo.deleteById(id);
     }
-    public Producto searchById(Long id){
-        return repo.findById(id).get();
+
+    public Producto searchById(Long id) {
+        return repo.findById(id).orElse(null); // Cambiado a orElse(null)
     }
 
     public List<ModeloDataAutocomplet> listAutoCompletProducto() {
@@ -54,14 +61,13 @@ public class ProductoService {
                 ModeloDataAutocomplet data = new ModeloDataAutocomplet();
                 data.setIdx(String.valueOf(producto.getIdProducto()));
                 data.setNameDysplay(producto.getNombre());
-                data.setOtherData(producto.getPu() + ":" + producto.getStock());
+                // Aquí hemos eliminado las referencias a 'pu' y 'stock' ya que ya no existen en Producto.
                 listarProducto.add(data);
             }
         } catch (Exception e) {
-            logger.error("Error al realizar la busqueda", e);
+            logger.error("Error al realizar la búsqueda", e);
         }
         return listarProducto;
     }
-
 }
 
