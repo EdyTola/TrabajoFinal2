@@ -14,11 +14,9 @@ public class ReservaService {
 
     @Autowired
     ReservaRepository repo;
-    public Reserva save(Reserva to){
-        return repo.save(to);
+    public Reserva save(Reserva to){return repo.save(to);
     }
-    public List<Reserva> list(){
-        return repo.findAll();
+    public List<Reserva> list() {return repo.findAll();
     }
     public Reserva update(Reserva to, Long id){
         try {
@@ -33,14 +31,11 @@ public class ReservaService {
         return null;
     }
 
-    public Reserva update(Reserva to){
-        return repo.save(to);
+    public Reserva update(Reserva to){return repo.save(to);
     }
-    public void delete(Long id){
-        repo.deleteById(id);
+    public void delete(Long id){repo.deleteById(id);
     }
-    public Reserva searchById(Long id){
-        return repo.findById(id).orElse(null);
+    public Reserva searchById(Long id){return repo.findById(id).orElse(null);
     }
 
     public List<ComboBoxOption> listarCombobox(){

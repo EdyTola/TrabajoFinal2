@@ -66,5 +66,5 @@ public class Producto {
     @ManyToOne
     @JoinColumn(name = "id_precio", referencedColumnName = "id_precio",
             nullable = false, foreignKey = @ForeignKey(name = "FK_UNIDADMEDIDA_PRODUCTO"))
-    private Precio precio;
+    private Precio precio; //unidadMedida
 }

@@ -57,8 +57,6 @@
                                             <opaqueInsets>
                                                 <Insets />
                                             </opaqueInsets></Label>
-                                        <Label text="Utilidad" GridPane.rowIndex="5" />
-                                        <Label text="Stock" GridPane.rowIndex="6" />
                                         <Label text="Reserva" GridPane.rowIndex="2" />
                                         <Label text="Menu" GridPane.rowIndex="3" />
                                         <Label text="Precio" GridPane.rowIndex="4" />
@@ -66,32 +64,6 @@
                                             <opaqueInsets>
                                                 <Insets />
                                             </opaqueInsets>
-                                            <GridPane.margin>
-                                                <Insets left="5.0" right="5.0" />
-                                            </GridPane.margin>
-                                        </TextField>
-                                        <TextField fx:id="txtPUnit" GridPane.columnIndex="1" GridPane.rowIndex="9">
-                                            <GridPane.margin>
-                                                <Insets left="5.0" right="5.0" />
-                                            </GridPane.margin>
-                                        </TextField>
-                                        <TextField fx:id="txtPUnitOld" GridPane.columnIndex="3" GridPane.rowIndex="9">
-                                            <GridPane.margin>
-                                                <Insets left="5.0" right="5.0" />
-                                            </GridPane.margin>
-                                        </TextField>
-                                        <TextField fx:id="txtUtilidad" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="5">
-                                            <GridPane.margin>
-                                                <Insets left="5.0" right="5.0" />
-                                            </GridPane.margin>
-                                        </TextField>
-                                        <TextField fx:id="txtStock" GridPane.columnIndex="1" GridPane.rowIndex="6">
-                                            <GridPane.margin>
-                                                <Insets left="5.0" right="5.0" />
-                                            </GridPane.margin>
-                                        </TextField>
-                                        <Label text="Stock Old" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                                        <TextField fx:id="txtStockOld" GridPane.columnIndex="3" GridPane.rowIndex="6">
                                             <GridPane.margin>
                                                 <Insets left="5.0" right="5.0" />
                                             </GridPane.margin>
@@ -111,12 +83,12 @@
                                                 <Insets left="5.0" right="5.0" />
                                             </GridPane.margin>
                                         </ComboBox>
-                                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Guardar" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Guardar" GridPane.columnIndex="1" GridPane.rowIndex="6">
                                             <GridPane.margin>
                                                 <Insets left="5.0" right="5.0" />
                                             </GridPane.margin>
                                         </Button>
-                                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Cancelar" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Cancelar" GridPane.columnIndex="2" GridPane.rowIndex="6">
                                             <GridPane.margin>
                                                 <Insets left="5.0" right="5.0" />
                                             </GridPane.margin>

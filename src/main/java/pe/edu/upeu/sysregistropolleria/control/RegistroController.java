@@ -31,9 +31,7 @@ import static pe.edu.upeu.sysregistropolleria.componente.Toast.showToast;
 public class RegistroController {
 
     @FXML
-    TextField txtNCliente, txtPUnit,
-            txtPUnitOld, txtUtilidad, txtStock, txtStockOld,
-            txtFiltroDato;
+    TextField txtNCliente, txtFiltroDato;
     @FXML
     ComboBox<ComboBoxOption> cbxReserva; //Marca
     @FXML
@@ -42,8 +40,8 @@ public class RegistroController {
     ComboBox<ComboBoxOption> cbxPrecio;//UnidMedida
     @FXML
     private TableView<Producto> tableView;
-    //@FXML
-    //Label lbnMsg;
+    @FXML
+    Label lbnMsg;
     @FXML
     private AnchorPane miContenedor;
     Stage stage;
@@ -75,12 +73,6 @@ public class RegistroController {
         }));
         timeline.setCycleCount(1);
         timeline.play();
-        // Usar Platform.runLater para ejecutar el código después de que la escena se haya cargado
-        /* Platform.runLater(() -> {
-           stage = (Stage) miContenedor.getScene().getWindow();
-           System.out.println("El título del stage es: " + stage.getTitle());
-           });
-           */
 
         cbxMenu.setTooltip(new Tooltip());
         cbxMenu.getItems().addAll(cs.listarCombobox());
@@ -117,6 +109,36 @@ public class RegistroController {
         });
         new ComboBoxAutoComplete<>(cbxPrecio);
 
+        // Crear instancia de la clase genérica TableViewHelper
+        TableViewHelper<Producto> tableViewHelper = new TableViewHelper<>();
+        LinkedHashMap<String, ColumnInfo> columns = new LinkedHashMap<>();
+        columns.put("ID Pro.", new ColumnInfo("idProducto", 60.0)); // Columna visible "Columna 1" mapea al campo "campo1"
+        columns.put("Nombre Cliente", new ColumnInfo("nombre", 200.0)); // Columna visible "Columna 2" mapea al campo "campo2"
+        //columns.put("P. Unitario", new ColumnInfo("pu", 150.0));
+        //columns.put("Utilidad", new ColumnInfo("utilidad", 100.0));
+        columns.put("Menu", new ColumnInfo("menu.nombre", 200.0)); // Columna visible "Columna 2" mapea al campo "campo2"
+        columns.put("Reserva", new ColumnInfo("reserva.nombre", 200.0));
+        columns.put("Precio", new ColumnInfo("precio.nombrePrecio",150.0));
+
+
+        // Definir las acciones de actualizar y eliminar
+        Consumer<Producto> updateAction = (Producto producto) -> {
+            System.out.println("Actualizar: " + producto);
+            //editForm(producto);
+        };
+        Consumer<Producto> deleteAction = (Producto producto) -> {System.out.println("Actualizar: " + producto);
+            ps.delete(producto.getIdProducto()); /*deletePerson(usuario);*/
+            double with=stage.getWidth()/1.5;
+            double h=stage.getHeight()/2;
+            showToast(stage, "Se eliminó correctamente!!", 2000, with, h);
+            listar();
+        };
+
+        tableViewHelper.addColumnsInOrderWithSize(tableView, columns,updateAction, deleteAction );
+        tableView.setTableMenuButtonVisible(true);
+        listar();
+
+
     }
 
     public void listar(){
@@ -132,31 +154,8 @@ public class RegistroController {
             System.out.println(e.getMessage());
         }
 
-        // Crear instancia de la clase genérica TableViewHelper
-        TableViewHelper<Producto> tableViewHelper = new TableViewHelper<>();
-        LinkedHashMap<String, ColumnInfo> columns = new LinkedHashMap<>();
-        columns.put("ID Pro.", new ColumnInfo("idProducto", 60.0)); // Columna visible "Columna 1" mapea al campo "campo1"
-        columns.put("Nombre Producto", new ColumnInfo("nombre", 200.0)); // Columna visible "Columna 2" mapea al campo "campo2"
-        columns.put("P. Unitario", new ColumnInfo("pu", 150.0)); // Columna visible "Columna 2" mapea al campo "campo2"
-        columns.put("Utilidad", new ColumnInfo("utilidad", 100.0)); // Columna visible "Columna 2" mapea al campo "campo2"
-        columns.put("Marca", new ColumnInfo("marca.nombre", 200.0)); // Columna visible "Columna 2" mapea al campo "campo2"
-        columns.put("Categoria", new ColumnInfo("categoria.nombre", 200.0)); // Columna visible "Columna 2" mapea al campo "campo2"
-        // Definir las acciones de actualizar y eliminar
-        Consumer<Producto> updateAction = (Producto producto) -> {
-            System.out.println("Actualizar: " + producto);
-            //editForm(producto);
-        };
-        Consumer<Producto> deleteAction = (Producto producto) -> {System.out.println("Actualizar: " + producto);
-            ps.delete(producto.getIdProducto()); /*deletePerson(usuario);*/
-            double with=stage.getWidth()/1.5;
-            double h=stage.getHeight()/2;
-            showToast(stage, "Se eliminó correctamente!!", 2000, with, h);
-            listar();
-        };
-        tableViewHelper.addColumnsInOrderWithSize(tableView, columns,updateAction, deleteAction );
-        tableView.setTableMenuButtonVisible(true);
-        listar();
 
 
     }
 }
+
