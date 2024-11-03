@@ -29,6 +29,7 @@ import java.util.*;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
+import static groovy.util.ObservableList.ChangeType.newValue;
 import static pe.edu.upeu.sysregistropolleria.componente.Toast.showToast;
 
 @Component
@@ -127,7 +128,7 @@ public class RegistroController {
         Consumer<Producto> updateAction = (Producto producto) -> {
             if (producto != null) {
                 System.out.println("Actualizar: " + producto);
-                // editForm(producto); // Descomenta esto si tienes un método para editar
+                editForm(producto);
             }
         };
         Consumer<Producto> deleteAction = (Producto producto) -> {
@@ -150,9 +151,13 @@ public class RegistroController {
             listarProducto = FXCollections.observableArrayList(ps.list());
             System.out.println("Productos cargados: " + listarProducto); // Agregar log aquí
             tableView.getItems().addAll(listarProducto);
+            txtFiltroDato.textProperty().addListener((observable, oldValue, newValue) -> {
+                filtrarProductos(newValue);});
+
         } catch (Exception e) {
             System.out.println("Error al listar productos: " + e.getMessage());
         }
+
     }
 
     public void limpiarError() {
@@ -227,7 +232,7 @@ public class RegistroController {
         }
 
         Set<ConstraintViolation<Producto>> violaciones = validator.validate(formulario);
-        // Si prefieres ordenarlo por el nombre de la propiedad que violó la restricción, podrías usar:
+
         List<ConstraintViolation<Producto>> violacionesOrdenadasPorPropiedad = violaciones.stream()
                 .sorted((v1, v2) -> v1.getPropertyPath().toString().compareTo(v2.getPropertyPath().toString()))
                 .collect(Collectors.toList());
@@ -255,6 +260,62 @@ public class RegistroController {
             validarCampos(violacionesOrdenadasPorPropiedad);
         }
     }
+    private void filtrarProductos(String filtro) {
+        if (filtro == null || filtro.isEmpty()) {
+            // Si el filtro está vacío, volver a mostrar la lista completa
+            tableView.getItems().clear();
+            tableView.getItems().addAll(listarProducto);
+        } else {
+            // Aplicar el filtro
+            String lowerCaseFilter = filtro.toLowerCase();
+            List<Producto> productosFiltrados = listarProducto.stream()
+                    .filter(producto -> {
+                        // Verificar si el filtro coincide con alguno de los campos
+                        if (producto.getNombre().toLowerCase().contains(lowerCaseFilter)) {
+                            return true;
+                        }
+                        if (producto.getReserva().getNombre().toLowerCase().contains(lowerCaseFilter)) {
+                            return true;
+                        }
+                        if (producto.getMenu().getNombre().toLowerCase().contains(lowerCaseFilter)) {
+                            return true;
+                        }
+                        return false; // Si no coincide con ningún campo
+                    })
+                    .collect(Collectors.toList());
+            // Actualizar los items del TableView con los productos filtrados
+            tableView.getItems().clear();
+            tableView.getItems().addAll(productosFiltrados);
+        }
+    }
+    public void editForm(Producto producto){
+        txtNCliente.setText(producto.getNombre());
+        // Seleccionar el ítem en cbxMarca según el ID de Marca
+        cbxReserva.getSelectionModel().select(
+                cbxReserva.getItems().stream()
+                        .filter(marca -> Long.parseLong(marca.getKey())==producto.getReserva().getIdReserva())
+                        .findFirst()
+                        .orElse(null)
+        );
+        // Seleccionar el ítem en cbxCategoria según el ID de Categoria
+        cbxMenu.getSelectionModel().select(
+                cbxMenu.getItems().stream()
+                        .filter(categoria -> Long.parseLong(categoria.getKey())==producto.getMenu().getIdMenu())
+                        .findFirst()
+                        .orElse(null)
+        );
+        // Seleccionar el ítem en cbxUnidMedida según el ID de Unidad de Medida
+        cbxPrecio.getSelectionModel().select(
+                cbxPrecio.getItems().stream()
+                        .filter(unidad -> Long.parseLong(unidad.getKey())==producto.getPrecio().getIdPrecio())
+                        .findFirst()
+                        .orElse(null)
+        );
+        idProductoCE=producto.getIdProducto();
+        limpiarError();
+    }
+
+
 
 }
 
