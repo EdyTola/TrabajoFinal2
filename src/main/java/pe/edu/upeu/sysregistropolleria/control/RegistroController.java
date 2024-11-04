@@ -24,11 +24,9 @@ import pe.edu.upeu.sysregistropolleria.servicio.MenusService;
 import pe.edu.upeu.sysregistropolleria.servicio.PrecioService;
 import pe.edu.upeu.sysregistropolleria.servicio.ProductoService;
 import pe.edu.upeu.sysregistropolleria.servicio.ReservaService;
-
 import java.util.*;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
-
 import static groovy.util.ObservableList.ChangeType.newValue;
 import static pe.edu.upeu.sysregistropolleria.componente.Toast.showToast;
 
@@ -60,12 +58,10 @@ public class RegistroController {
     @Autowired
     PrecioService ums;
 
-
     private Validator validator;
     ObservableList<Producto> listarProducto;
     Producto formulario;
     Long idProductoCE=0L;
-
 
     public void initialize() {
         Timeline timeline = new Timeline(new KeyFrame(Duration.millis(2000), event -> {
@@ -78,7 +74,6 @@ public class RegistroController {
         }));
         timeline.setCycleCount(1);
         timeline.play();
-
         cbxMenu.setTooltip(new Tooltip());
         cbxMenu.getItems().addAll(cs.listarCombobox());
         cbxMenu.setOnAction(event -> {
@@ -89,7 +84,6 @@ public class RegistroController {
             }
         });
         new ComboBoxAutoComplete<>(cbxMenu);
-
         cbxReserva.setTooltip(new Tooltip());
         cbxReserva.getItems().addAll(ms.listarCombobox());
         cbxReserva.setOnAction(event -> {
@@ -100,7 +94,6 @@ public class RegistroController {
             }
         });
         new ComboBoxAutoComplete<>(cbxReserva);
-
         cbxPrecio.setTooltip(new Tooltip());
         cbxPrecio.getItems().addAll(ums.listarCombobox());
         cbxPrecio.setOnAction(event -> {
@@ -124,7 +117,6 @@ public class RegistroController {
         columns.put("Reserva", new ColumnInfo("reserva.nombre", 200.0));
         columns.put("Precio", new ColumnInfo("precio.nombrePrecio",150.0));
 
-        // Definir las acciones de actualizar y eliminar
         Consumer<Producto> updateAction = (Producto producto) -> {
             if (producto != null) {
                 System.out.println("Actualizar: " + producto);
@@ -140,8 +132,8 @@ public class RegistroController {
                 listar();
             }
         };
-
         tableViewHelper.addColumnsInOrderWithSize(tableView, columns, updateAction, deleteAction);
+
         tableView.setTableMenuButtonVisible(true);
         listar();
     }
@@ -157,16 +149,13 @@ public class RegistroController {
         } catch (Exception e) {
             System.out.println("Error al listar productos: " + e.getMessage());
         }
-
     }
-
     public void limpiarError() {
         txtNCliente.getStyleClass().remove("text-field-error");
         cbxReserva.getStyleClass().remove("text-field-error");
         cbxMenu.getStyleClass().remove("text-field-error");
         cbxPrecio.getStyleClass().remove("text-field-error");
     }
-
     public void clearForm() {
         txtNCliente.setText("");
         cbxReserva.getSelectionModel().select(null);
@@ -175,13 +164,11 @@ public class RegistroController {
         idProductoCE = 0L;
         limpiarError();
     }
-
     @FXML
     public void cancelarAccion() {
         clearForm();
         limpiarError();
     }
-
     void validarCampos(List<ConstraintViolation<Producto>> violacionesOrdenadasPorPropiedad) {
         LinkedHashMap<String, String> erroresOrdenados = new LinkedHashMap<>();
         for (ConstraintViolation<Producto> violacion : violacionesOrdenadasPorPropiedad) {
@@ -209,7 +196,6 @@ public class RegistroController {
             lbnMsg.setStyle("-fx-text-fill: red; -fx-font-size: 16px;");
         }
     }
-
     @FXML
     public void validarFormulario() {
         formulario = new Producto();
@@ -290,14 +276,12 @@ public class RegistroController {
     }
     public void editForm(Producto producto){
         txtNCliente.setText(producto.getNombre());
-        // Seleccionar el ítem en cbxMarca según el ID de Marca
         cbxReserva.getSelectionModel().select(
                 cbxReserva.getItems().stream()
                         .filter(marca -> Long.parseLong(marca.getKey())==producto.getReserva().getIdReserva())
                         .findFirst()
                         .orElse(null)
         );
-        // Seleccionar el ítem en cbxCategoria según el ID de Categoria
         cbxMenu.getSelectionModel().select(
                 cbxMenu.getItems().stream()
                         .filter(categoria -> Long.parseLong(categoria.getKey())==producto.getMenu().getIdMenu())
@@ -314,8 +298,5 @@ public class RegistroController {
         idProductoCE=producto.getIdProducto();
         limpiarError();
     }
-
-
-
 }
 

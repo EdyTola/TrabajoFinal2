@@ -1,9 +1,6 @@
 package pe.edu.upeu.sysregistropolleria.utils;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -31,15 +28,14 @@ public class UtilsX {
 
     public Properties detectLanguage(String idioma) {
         Properties myresourcesx = new Properties();
-        try {
-            FileInputStream in = new FileInputStream(
-                    getFileExterno("language", "idiomas-" + idioma + ".properties").getAbsolutePath());
-            try {
+        // Intento cargar el archivo desde el recurso (ruta relativa dentro del JAR o carpeta de recursos)
+        try (InputStream in = getClass().getResourceAsStream("/language/idiomas-" + idioma + ".properties")) {
+            if (in != null) {
                 myresourcesx.load(in);
-            } catch (IOException e) {
-                e.printStackTrace();
+            } else {
+                System.err.println("Archivo de idioma no encontrado en el recurso: /language/idiomas-" + idioma + ".properties");
             }
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return myresourcesx;

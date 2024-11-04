@@ -16,7 +16,7 @@ public class MenusService {
     MenusRepository repo;
 
     //C
-    public Menus ave(Menus to){
+    public Menus save(Menus to){
         return repo.save(to);
     }
 
