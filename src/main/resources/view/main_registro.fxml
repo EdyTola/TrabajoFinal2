@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="miContenedor" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.sysregistropolleria.control.RegistroController">
+<AnchorPane fx:id="miContenedor" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #F5F5DC;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.sysregistropolleria.control.RegistroController">
     <children>
         <VBox layoutX="14.0" layoutY="14.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
             <children>
@@ -16,9 +16,9 @@
                                 <Font name="System Bold" size="16.0" />
                             </font>
                         </Label>
-                        <Label layoutX="274.0" layoutY="91.0" text="Filtrar Registro:" />
-                        <TextField fx:id="txtFiltroDato" layoutX="274.0" layoutY="109.0" />
-                        <Button layoutX="435.0" layoutY="109.0" mnemonicParsing="false" text="Button" />
+                        <Label layoutX="274.0" layoutY="78.0" text="Filtrar Registro:" />
+                        <TextField fx:id="txtFiltroDato" layoutX="270.0" layoutY="97.0" />
+                        <Button layoutX="427.0" layoutY="97.0" mnemonicParsing="false" text="Button" />
                     </children>
                     <VBox.margin>
                         <Insets />
@@ -83,12 +83,12 @@
                                                 <Insets left="5.0" right="5.0" />
                                             </GridPane.margin>
                                         </ComboBox>
-                                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#validarFormulario" text="Guardar" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#validarFormulario" style="-fx-background-color: #50C878;" text="Guardar" GridPane.columnIndex="1" GridPane.rowIndex="6">
                                             <GridPane.margin>
                                                 <Insets left="5.0" right="5.0" />
                                             </GridPane.margin>
                                         </Button>
-                                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#cancelarAccion" text="Cancelar" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#cancelarAccion" style="-fx-background-color: #DC143C;" text="Cancelar" GridPane.columnIndex="2" GridPane.rowIndex="6">
                                             <GridPane.margin>
                                                 <Insets left="5.0" right="5.0" />
                                             </GridPane.margin>
@@ -96,6 +96,7 @@
                                         <Label fx:id="lbnMsg" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="47.0" prefWidth="398.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="9" GridPane.rowSpan="2" />
                                     </children>
                                 </GridPane>
+                        <Separator layoutY="12.0" prefHeight="5.0" prefWidth="400.0" />
                             </children>
                         </AnchorPane>
                         <AnchorPane maxWidth="1.7976931348623157E308">

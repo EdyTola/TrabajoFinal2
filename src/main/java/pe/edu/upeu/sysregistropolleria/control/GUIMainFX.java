@@ -159,12 +159,12 @@ public class GUIMainFX {
                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/login.fxml"));
                     fxmlLoader.setControllerFactory(context::getBean);
                     parent= fxmlLoader.load();
-                    Scene scene = new Scene(parent); //Punto (1) Diana
+                    Scene scene = new Scene(parent);
                     stage.sizeToScene();
                     stage.setScene(scene);
-                    stage.centerOnScreen(); // Punto (1) Mary
-                    stage.setTitle("SysAlmacen Spring Java-FX");
-                    stage.setResizable(false); //Miael (0.8)
+                    stage.centerOnScreen();
+                    stage.setTitle("SysRegsitroPolleria Spring Java-FX");
+                    stage.setResizable(false);
                     stage.show();
 
 

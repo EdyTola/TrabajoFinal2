@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="miContenedor" maxWidth="1.7976931348623157E308" prefHeight="400.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.sysregistropolleria.control.ProdAutoCompControl">
+<AnchorPane fx:id="miContenedor" maxWidth="1.7976931348623157E308" prefHeight="400.0" style="-fx-background-color: #F5F5DC;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.sysregistropolleria.control.ProdAutoCompControl">
     <children>
         <GridPane layoutX="14.0" layoutY="14.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="10.0">
             <columnConstraints>

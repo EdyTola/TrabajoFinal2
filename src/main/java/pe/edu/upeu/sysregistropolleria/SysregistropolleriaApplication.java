@@ -17,9 +17,7 @@ public class SysregistropolleriaApplication extends Application {
 	private static ConfigurableApplicationContext configurableApplicationContext;
 	private Parent parent;
 
-
 	public static void main(String[] args) {
-		//SpringApplication.run(SysAlmacenFxApplication.class, args);
 		launch(args);
 	}
 
@@ -28,10 +26,13 @@ public class SysregistropolleriaApplication extends Application {
 		SpringApplicationBuilder builder = new SpringApplicationBuilder(SysregistropolleriaApplication.class);
 		builder.application().setWebApplicationType(WebApplicationType.NONE);
 		configurableApplicationContext = builder.run(getParameters().getRaw().toArray(new String[0]));
+
+		// Asegúrate de que el archivo FXML exista en la ruta especificada
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/login.fxml"));
 		fxmlLoader.setControllerFactory(configurableApplicationContext::getBean);
-		parent= fxmlLoader.load(); // Asegúrate de que este archivo exista en la ruta especificada
+		parent = fxmlLoader.load();
 	}
+
 	@Override
 	public void start(Stage stage) throws Exception {
 		Scene scene = new Scene(parent);
@@ -41,6 +42,7 @@ public class SysregistropolleriaApplication extends Application {
 		stage.setResizable(false);
 		stage.show();
 	}
+
 	@Override
 	public void stop() throws Exception {
 		configurableApplicationContext.close();
