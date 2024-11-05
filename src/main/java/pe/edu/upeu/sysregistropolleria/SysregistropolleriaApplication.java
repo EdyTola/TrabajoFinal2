@@ -29,6 +29,7 @@ public class SysregistropolleriaApplication extends Application {
 
 		// Asegúrate de que el archivo FXML exista en la ruta especificada
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/login.fxml"));
+        //FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/main_registro.fxml"));
 		fxmlLoader.setControllerFactory(configurableApplicationContext::getBean);
 		parent = fxmlLoader.load();
 	}

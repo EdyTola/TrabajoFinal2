@@ -117,17 +117,17 @@ public class GUIMainFX {
     class MenuItemListener {
         public void handle(javafx.event.ActionEvent e) {
 
-            if (((MenuItem) e.getSource()).getId().equals("mimiregproduct")) {
+            if (((MenuItem) e.getSource()).getId().equals("mimipolleria")) {
                 tabPaneFx.getTabs().clear();
                 FXMLLoader loader = new
-                        FXMLLoader(getClass().getResource("/view/main_producto.fxml"));
+                        FXMLLoader(getClass().getResource("/view/main_registro.fxml"));
                 loader.setControllerFactory(context::getBean);
                 Parent paneFromFXML;
                 try {
                     paneFromFXML = loader.load(); // Cargar el contenido FXML
                     ScrollPane dd= new ScrollPane(paneFromFXML);
                     //mc.setContexto(ctx);
-                    Tab clienteTab = new Tab("Reg. Producto",dd );
+                    Tab clienteTab = new Tab("Reg. Producto POlleria",dd );
                     tabPaneFx.getTabs().add(clienteTab);
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
