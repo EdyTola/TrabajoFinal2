@@ -26,7 +26,7 @@ public class VentaController {
     @FXML
     TextField autocompProducto;
     @FXML
-    TextField nombreProducto, codigoPro, stockPro, cantidadPro, punitPro, preTPro, txtBaseImp, txtIgv, txtDescuento, txtImporteT;
+    TextField nombreProducto, codigoPro, cantidadPro, txtBaseImp, txtIgv, txtDescuento, txtImporteT;
     @FXML
     Button btnRegVenta, btnRegCarrito, btnFormCliente;
     @FXML
@@ -41,6 +41,7 @@ public class VentaController {
     ModeloDataAutocomplet lastProducto;
     AutoCompleteTextField actfC;
     ModeloDataAutocomplet lastCliente;
+
     @Autowired
     ProductoService ps;
     @Autowired
@@ -53,6 +54,7 @@ public class VentaController {
     VentaService daoV;
     @Autowired
     VentaDetalleService daoVD;
+
     Stage stage;
     @FXML
     private AnchorPane miContenedor;
@@ -64,19 +66,17 @@ public class VentaController {
 
 
     @FXML
-    public void initialize(){
-
+    public void initialize() {
         Platform.runLater(() -> {
             stage = (Stage) miContenedor.getScene().getWindow();
             System.out.println("El título del stage es: " + stage.getTitle());
         });
 
         listarCliente();
-        actfC=new AutoCompleteTextField<>(entriesC, autocompCliente);
-        autocompCliente.setOnKeyReleased(e->{
-            lastCliente=(ModeloDataAutocomplet) actfC.getLastSelectedObject();
-            if(lastCliente!=null){
-                System.out.println(lastCliente.getNameDysplay());
+        actfC = new AutoCompleteTextField<>(entriesC, autocompCliente);
+        autocompCliente.setOnKeyReleased(e -> {
+            lastCliente = (ModeloDataAutocomplet) actfC.getLastSelectedObject();
+            if (lastCliente != null) {
                 razonSocial.setText(lastCliente.getNameDysplay());
                 dniRuc.setText(lastCliente.getIdx());
                 listar();
@@ -84,46 +84,38 @@ public class VentaController {
         });
 
         listarProducto();
-        actf=new AutoCompleteTextField<>(entries, autocompProducto);
-        autocompProducto.setOnKeyReleased(e->{
-            lastProducto=(ModeloDataAutocomplet) actf.getLastSelectedObject();
-            if(lastProducto!=null){
-                System.out.println(lastProducto.getNameDysplay());
+        actf = new AutoCompleteTextField<>(entries, autocompProducto);
+        autocompProducto.setOnKeyReleased(e -> {
+            lastProducto = (ModeloDataAutocomplet) actf.getLastSelectedObject();
+            if (lastProducto != null) {
                 nombreProducto.setText(lastProducto.getNameDysplay());
                 codigoPro.setText(lastProducto.getIdx());
-                String[] dato=lastProducto.getOtherData().split(":");
-                punitPro.setText(dato[0]);
-                stockPro.setText(dato[1]);
             }
         });
-
 
         personalizarTabla();
         btnRegCarrito.setDisable(true);
     }
-    public void listarProducto(){
+
+    public void listarProducto() {
         entries.addAll(ps.listAutoCompletProducto());
     }
-    public void listarCliente(){
+
+    public void listarCliente() {
         entriesC.addAll(cs.listAutoCompletCliente());
     }
 
-    public void personalizarTabla(){
-        // Crear instancia de la clase genérica TableViewHelper
+    public void personalizarTabla() {
         TableViewHelper<VentCarrito> tableViewHelper = new TableViewHelper<>();
-        // Definir las columnas dinámicamente en un mapa (nombre visible -> campo del modelo)
         LinkedHashMap<String, ColumnInfo> columns = new LinkedHashMap<>();
-        columns.put("ID Prod", new ColumnInfo("producto.idProducto", 100.0)); // Columna visible "Columna 1" mapea al campo "campo1"
-        columns.put("Nombre Producto", new ColumnInfo("nombreProducto", 300.0)); // Columna visible "Columna 1" mapea al campo "campo1"
-        columns.put("Cantidad", new ColumnInfo("cantidad", 60.0)); // Columna visible "Columna 2" mapea al campo "campo2"
-        columns.put("P.Unitario", new ColumnInfo("punitario", 100.0)); // Columna visible "Columna 2" mapea al campo "campo2"
-        columns.put("P.Total", new ColumnInfo("ptotal", 100.0)); // Columna visible "Columna 2" mapea al campo "campo2"
-        // Definir las acciones de actualizar y eliminar
-        Consumer<VentCarrito> updateAction = (VentCarrito ventCarrito) -> { System.out.println("Actualizar: " + ventCarrito); };
-        Consumer<VentCarrito> deleteAction = (VentCarrito ventCarrito) -> {deleteReg(ventCarrito); };
-        // Usar el helper para agregar las columnas en el orden correcto
-        tableViewHelper.addColumnsInOrderWithSize(tableView, columns,updateAction, deleteAction );
-        // Agregar botones de eliminar y modificar
+        columns.put("ID Prod", new ColumnInfo("producto.idProducto", 100.0));
+        columns.put("Nombre Producto", new ColumnInfo("nombreProducto", 300.0));
+        columns.put("Cantidad", new ColumnInfo("cantidad", 60.0));
+        columns.put("P.Unitario", new ColumnInfo("punitario", 100.0));
+        columns.put("P.Total", new ColumnInfo("ptotal", 100.0));
+        Consumer<VentCarrito> updateAction = ventCarrito -> System.out.println("Actualizar: " + ventCarrito);
+        Consumer<VentCarrito> deleteAction = this::deleteReg;
+        tableViewHelper.addColumnsInOrderWithSize(tableView, columns, updateAction, deleteAction);
         tableView.setTableMenuButtonVisible(true);
     }
 
@@ -164,37 +156,47 @@ public class VentaController {
     }
 
     @FXML
-    private void calcularPT(){
-        if(!cantidadPro.getText().equals("")){
-            double dato=Double.parseDouble(punitPro.getText())*Double.parseDouble(cantidadPro.getText());
-            preTPro.setText(String.valueOf(dato));
-            if(Double.parseDouble(cantidadPro.getText())>0.0){
-                btnRegCarrito.setDisable(false);
-            }else{
+    private void calcularPT() {
+        if (!cantidadPro.getText().isEmpty()) {
+            try {
+                // Obtener el precio unitario del producto desde la base de datos
+                double precioUnitario = ps.getPrecioProducto(Long.parseLong(codigoPro.getText()));
+                double cantidad = Double.parseDouble(cantidadPro.getText());
+
+                // Calcular el precio total
+                double precioTotal = precioUnitario * cantidad;
+
+                // Mostrar precio total en txtImporteT
+                txtImporteT.setText(String.valueOf(precioTotal));
+
+                // Habilitar o deshabilitar el botón según la cantidad
+                btnRegCarrito.setDisable(cantidad <= 0.0);
+            } catch (NumberFormatException | NullPointerException e) {
+                System.out.println("Error al calcular el precio: " + e.getMessage());
                 btnRegCarrito.setDisable(true);
             }
-        }else{
+        } else {
             btnRegCarrito.setDisable(true);
         }
     }
 
 
     @FXML
-    private void registarPCarrito(){
+    private void registarPCarrito() {
         try {
-            VentCarrito ss= VentCarrito.builder()
+            VentCarrito ss = VentCarrito.builder()
                     .dniruc(dniRuc.getText())
                     .producto(ps.searchById(Long.parseLong(codigoPro.getText())))
                     .nombreProducto(nombreProducto.getText())
                     .cantidad(Double.parseDouble(cantidadPro.getText()))
-                    .punitario(Double.parseDouble(punitPro.getText()))
-                    .ptotal(Double.parseDouble(preTPro.getText()))
+                    .punitario(ps.getPrecioProducto(Long.parseLong(codigoPro.getText()))) // Obtener desde la base de datos
+                    .ptotal(Double.parseDouble(cantidadPro.getText()) * ps.getPrecioProducto(Long.parseLong(codigoPro.getText())))
                     .estado(1)
                     .usuario(daoU.searchById(SessionManager.getInstance().getUserId()))
                     .build();
             daoC.save(ss);
             listar();
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }

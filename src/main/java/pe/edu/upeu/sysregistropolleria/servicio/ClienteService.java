@@ -16,10 +16,13 @@ public class ClienteService {
 
     @Autowired
     ClienteRepository repo;
-    Logger logger= LoggerFactory.getLogger(ClienteService.class);
+
+    Logger logger = LoggerFactory.getLogger(ProductoService.class);
+
     public Cliente save(Cliente to) {
         return repo.save(to);
     }
+
 
     public List<Cliente> list() {
         return repo.findAll();

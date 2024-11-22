@@ -45,11 +45,13 @@ public class VentCarritoService {
     public List<VentCarrito> listaCarritoCliente(String dni) {
         return repo.listaCarritoCliente(dni);
     }
-
     @Transactional
     public void deleteCarAll(String dniruc) {
         this.repo.deleteByDniruc(dniruc);
     }
+
+
+
 
 
 
