@@ -82,4 +82,24 @@ public class LoginController {
             System.out.println(e.getMessage());
         }
     }
+    @FXML
+    public void register(ActionEvent event) throws IOException {
+        // Crear un nuevo objeto Usuario
+        Usuario nuevoUsuario = new Usuario();
+
+        // Obtener datos del formulario de registro (puedes tener otros campos en tu vista)
+        nuevoUsuario.setUser(txtUsuario.getText()); // Asumiendo que usas el mismo campo para el nombre de usuario
+        nuevoUsuario.setClave(txtClave.getText()); // Captura la contraseña
+        nuevoUsuario.setEstado("activo"); // Estado por defecto, puedes cambiarlo según tu lógica
+
+        // Asumir que tienes un perfil para asignar (puedes crear un combo box para elegir el perfil)
+        // nuevoUsuario.setIdPerfil(seleccionPerfil); // Descomentar y asignar según tu lógica
+
+        // Llamar al servicio para guardar el nuevo usuario
+        us.save(nuevoUsuario);
+
+        // Opcional: Mostrar un mensaje de éxito
+        Toast.showToast((Stage) ((Node) event.getSource()).getScene().getWindow(),
+                "Usuario registrado con éxito!", 2000, 300, 200);
+    }
 }

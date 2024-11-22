@@ -22,6 +22,7 @@ public class MenuMenuItemDao implements MenuMenuItenDaoI{
         lista.add(new MenuMenuItenTO("Producto", "Reg. Polleria", "mipolleria"));
         lista.add(new MenuMenuItenTO("Producto", "Ver2", "miver2"));
         lista.add(new MenuMenuItenTO("Producto", "Auto Complete", "miautcomp"));
+        lista.add(new MenuMenuItenTO("Venta", "Reg. Venta", "miventa"));
         lista.add(new MenuMenuItenTO("Principal", "Cliente", "cliente"));
         lista.add(new MenuMenuItenTO("Principal", "Rep. Venta", "repventa"));
         lista.add(new MenuMenuItenTO("Principal", "Reg. Venta", "regventa"));

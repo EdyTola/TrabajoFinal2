@@ -1,90 +1,72 @@
-2024-11-05T09:07:37.764-05:00  INFO 13588 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : Starting application using Java 22 with PID 13588 (started by PC in D:\gihud\Trabajo\SysRegistroPolleria)
-2024-11-05T09:07:37.900-05:00  INFO 13588 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : No active profile set, falling back to 1 default profile: "default"
-2024-11-05T09:07:42.062-05:00  INFO 13588 --- [SysRegistroPolleria] [JavaFX-Launcher] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-11-05T09:07:42.860-05:00  INFO 13588 --- [SysRegistroPolleria] [JavaFX-Launcher] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 689 ms. Found 15 JPA repository interfaces.
-2024-11-05T09:07:48.389-05:00  INFO 13588 --- [SysRegistroPolleria] [JavaFX-Launcher] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-11-05T09:07:49.048-05:00  INFO 13588 --- [SysRegistroPolleria] [JavaFX-Launcher] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2024-11-05T09:07:49.348-05:00  INFO 13588 --- [SysRegistroPolleria] [JavaFX-Launcher] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-11-05T09:07:52.277-05:00  INFO 13588 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-11-05T09:07:52.742-05:00  INFO 13588 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-11-05T09:07:54.148-05:00  INFO 13588 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@42651943
-2024-11-05T09:07:54.152-05:00  INFO 13588 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-11-05T09:08:01.476-05:00  INFO 13588 --- [SysRegistroPolleria] [JavaFX-Launcher] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-11-05T09:08:01.563-05:00  INFO 13588 --- [SysRegistroPolleria] [JavaFX-Launcher] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-11-05T09:08:02.850-05:00  INFO 13588 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-11-05T09:08:04.472-05:00  INFO 13588 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : Started application in 29.551 seconds (process running for 33.465)
-2024-11-05T09:09:11.565-05:00  INFO 13588 --- [SysRegistroPolleria] [JavaFX Application Thread] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-11-05T09:09:11.572-05:00  INFO 13588 --- [SysRegistroPolleria] [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-11-05T09:09:11.590-05:00  INFO 13588 --- [SysRegistroPolleria] [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-11-05T09:12:33.545-05:00  INFO 16372 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : Starting application using Java 22 with PID 16372 (started by PC in D:\gihud\Trabajo\SysRegistroPolleria)
-2024-11-05T09:12:33.551-05:00  INFO 16372 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : No active profile set, falling back to 1 default profile: "default"
-2024-11-05T09:12:35.893-05:00  INFO 16372 --- [SysRegistroPolleria] [JavaFX-Launcher] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-11-05T09:12:36.190-05:00  INFO 16372 --- [SysRegistroPolleria] [JavaFX-Launcher] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 281 ms. Found 15 JPA repository interfaces.
-2024-11-05T09:12:37.729-05:00  INFO 16372 --- [SysRegistroPolleria] [JavaFX-Launcher] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-11-05T09:12:37.823-05:00  INFO 16372 --- [SysRegistroPolleria] [JavaFX-Launcher] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2024-11-05T09:12:37.883-05:00  INFO 16372 --- [SysRegistroPolleria] [JavaFX-Launcher] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-11-05T09:12:38.478-05:00  INFO 16372 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-11-05T09:12:38.546-05:00  INFO 16372 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-11-05T09:12:39.113-05:00  INFO 16372 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@4302adc
-2024-11-05T09:12:39.161-05:00  INFO 16372 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-11-05T09:12:42.068-05:00  INFO 16372 --- [SysRegistroPolleria] [JavaFX-Launcher] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-11-05T09:12:42.146-05:00  INFO 16372 --- [SysRegistroPolleria] [JavaFX-Launcher] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-11-05T09:12:42.812-05:00  INFO 16372 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-11-05T09:12:43.974-05:00  INFO 16372 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : Started application in 13.106 seconds (process running for 16.245)
-2024-11-05T09:14:04.974-05:00  INFO 16372 --- [SysRegistroPolleria] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-11-05T09:14:04.978-05:00  INFO 16372 --- [SysRegistroPolleria] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-11-05T09:14:04.993-05:00  INFO 16372 --- [SysRegistroPolleria] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-11-05T09:14:17.013-05:00  INFO 6372 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : Starting application using Java 22 with PID 6372 (started by PC in D:\gihud\Trabajo\SysRegistroPolleria)
-2024-11-05T09:14:17.018-05:00  INFO 6372 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : No active profile set, falling back to 1 default profile: "default"
-2024-11-05T09:14:19.129-05:00  INFO 6372 --- [SysRegistroPolleria] [JavaFX-Launcher] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-11-05T09:14:19.413-05:00  INFO 6372 --- [SysRegistroPolleria] [JavaFX-Launcher] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 259 ms. Found 15 JPA repository interfaces.
-2024-11-05T09:14:20.552-05:00  INFO 6372 --- [SysRegistroPolleria] [JavaFX-Launcher] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-11-05T09:14:20.674-05:00  INFO 6372 --- [SysRegistroPolleria] [JavaFX-Launcher] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2024-11-05T09:14:20.742-05:00  INFO 6372 --- [SysRegistroPolleria] [JavaFX-Launcher] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-11-05T09:14:21.383-05:00  INFO 6372 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-11-05T09:14:21.535-05:00  INFO 6372 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-11-05T09:14:21.911-05:00  INFO 6372 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@1e047517
-2024-11-05T09:14:22.026-05:00  INFO 6372 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-11-05T09:14:25.027-05:00  INFO 6372 --- [SysRegistroPolleria] [JavaFX-Launcher] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-11-05T09:14:25.113-05:00  INFO 6372 --- [SysRegistroPolleria] [JavaFX-Launcher] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-11-05T09:14:25.784-05:00  INFO 6372 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-11-05T09:14:26.721-05:00  INFO 6372 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : Started application in 11.991 seconds (process running for 14.637)
-2024-11-05T09:14:32.950-05:00  INFO 6372 --- [SysRegistroPolleria] [JavaFX Application Thread] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-11-05T09:14:32.956-05:00  INFO 6372 --- [SysRegistroPolleria] [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-11-05T09:14:32.996-05:00  INFO 6372 --- [SysRegistroPolleria] [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-11-05T09:46:31.940-05:00  INFO 13104 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : Starting application using Java 22 with PID 13104 (started by PC in D:\gihud\Trabajo\SysRegistroPolleria)
-2024-11-05T09:46:31.945-05:00  INFO 13104 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : No active profile set, falling back to 1 default profile: "default"
-2024-11-05T09:46:34.482-05:00  INFO 13104 --- [SysRegistroPolleria] [JavaFX-Launcher] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-11-05T09:46:34.759-05:00  INFO 13104 --- [SysRegistroPolleria] [JavaFX-Launcher] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 257 ms. Found 15 JPA repository interfaces.
-2024-11-05T09:46:36.267-05:00  INFO 13104 --- [SysRegistroPolleria] [JavaFX-Launcher] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-11-05T09:46:36.434-05:00  INFO 13104 --- [SysRegistroPolleria] [JavaFX-Launcher] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2024-11-05T09:46:36.562-05:00  INFO 13104 --- [SysRegistroPolleria] [JavaFX-Launcher] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-11-05T09:46:37.298-05:00  INFO 13104 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-11-05T09:46:37.354-05:00  INFO 13104 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-11-05T09:46:38.008-05:00  INFO 13104 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@2db34b11
-2024-11-05T09:46:38.014-05:00  INFO 13104 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-11-05T09:46:41.425-05:00  INFO 13104 --- [SysRegistroPolleria] [JavaFX-Launcher] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-11-05T09:46:41.505-05:00  INFO 13104 --- [SysRegistroPolleria] [JavaFX-Launcher] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-11-05T09:46:42.212-05:00  INFO 13104 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-11-05T09:46:43.722-05:00  INFO 13104 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : Started application in 17.103 seconds (process running for 20.013)
-2024-11-05T09:49:12.896-05:00  INFO 13104 --- [SysRegistroPolleria] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-11-05T09:49:12.903-05:00  INFO 13104 --- [SysRegistroPolleria] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-11-05T09:49:12.927-05:00  INFO 13104 --- [SysRegistroPolleria] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-11-05T09:49:36.510-05:00  INFO 1504 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : Starting application using Java 22 with PID 1504 (started by PC in D:\gihud\Trabajo\SysRegistroPolleria)
-2024-11-05T09:49:36.514-05:00  INFO 1504 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : No active profile set, falling back to 1 default profile: "default"
-2024-11-05T09:49:38.432-05:00  INFO 1504 --- [SysRegistroPolleria] [JavaFX-Launcher] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-11-05T09:49:38.751-05:00  INFO 1504 --- [SysRegistroPolleria] [JavaFX-Launcher] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 307 ms. Found 15 JPA repository interfaces.
-2024-11-05T09:49:39.842-05:00  INFO 1504 --- [SysRegistroPolleria] [JavaFX-Launcher] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-11-05T09:49:39.993-05:00  INFO 1504 --- [SysRegistroPolleria] [JavaFX-Launcher] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2024-11-05T09:49:40.109-05:00  INFO 1504 --- [SysRegistroPolleria] [JavaFX-Launcher] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-11-05T09:49:40.719-05:00  INFO 1504 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-11-05T09:49:40.770-05:00  INFO 1504 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-11-05T09:49:41.386-05:00  INFO 1504 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@1e047517
-2024-11-05T09:49:41.389-05:00  INFO 1504 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-11-05T09:49:44.240-05:00  INFO 1504 --- [SysRegistroPolleria] [JavaFX-Launcher] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-11-05T09:49:44.318-05:00  INFO 1504 --- [SysRegistroPolleria] [JavaFX-Launcher] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-11-05T09:49:44.968-05:00  INFO 1504 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-11-05T09:49:46.100-05:00  INFO 1504 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : Started application in 12.0 seconds (process running for 14.541)
-2024-11-05T09:59:34.648-05:00  INFO 1504 --- [SysRegistroPolleria] [JavaFX Application Thread] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-11-05T09:59:34.678-05:00  INFO 1504 --- [SysRegistroPolleria] [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-11-05T09:59:34.784-05:00  INFO 1504 --- [SysRegistroPolleria] [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-11-21T00:02:25.282-05:00  INFO 7568 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : Starting application using Java 18.0.1.1 with PID 7568 (started by PC in D:\gihud\Trabajo\SysRegistroPolleria)
+2024-11-21T00:02:25.295-05:00  INFO 7568 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : No active profile set, falling back to 1 default profile: "default"
+2024-11-21T00:02:27.419-05:00  INFO 7568 --- [SysRegistroPolleria] [JavaFX-Launcher] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-21T00:02:27.719-05:00  INFO 7568 --- [SysRegistroPolleria] [JavaFX-Launcher] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 286 ms. Found 15 JPA repository interfaces.
+2024-11-21T00:02:29.057-05:00  INFO 7568 --- [SysRegistroPolleria] [JavaFX-Launcher] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-21T00:02:29.201-05:00  INFO 7568 --- [SysRegistroPolleria] [JavaFX-Launcher] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-21T00:02:29.355-05:00  INFO 7568 --- [SysRegistroPolleria] [JavaFX-Launcher] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-21T00:02:29.984-05:00  INFO 7568 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-21T00:02:30.033-05:00  INFO 7568 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-21T00:02:30.220-05:00  INFO 7568 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@43cca254
+2024-11-21T00:02:30.223-05:00  INFO 7568 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-21T00:02:33.114-05:00  INFO 7568 --- [SysRegistroPolleria] [JavaFX-Launcher] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-21T00:02:33.205-05:00  INFO 7568 --- [SysRegistroPolleria] [JavaFX-Launcher] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-21T00:02:33.752-05:00  INFO 7568 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-21T00:02:35.085-05:00  INFO 7568 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : Started application in 11.962 seconds (process running for 14.15)
+2024-11-21T00:03:32.469-05:00  INFO 7568 --- [SysRegistroPolleria] [JavaFX Application Thread] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-21T00:03:32.494-05:00  INFO 7568 --- [SysRegistroPolleria] [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-21T00:03:32.558-05:00  INFO 7568 --- [SysRegistroPolleria] [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-11-21T17:05:07.954-05:00  INFO 13324 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : Starting application using Java 18.0.1.1 with PID 13324 (started by PC in D:\gihud\Trabajo\SysRegistroPolleria)
+2024-11-21T17:05:07.998-05:00  INFO 13324 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : No active profile set, falling back to 1 default profile: "default"
+2024-11-21T17:05:10.375-05:00  INFO 13324 --- [SysRegistroPolleria] [JavaFX-Launcher] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-21T17:05:10.604-05:00  INFO 13324 --- [SysRegistroPolleria] [JavaFX-Launcher] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 215 ms. Found 15 JPA repository interfaces.
+2024-11-21T17:05:12.081-05:00  INFO 13324 --- [SysRegistroPolleria] [JavaFX-Launcher] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-21T17:05:12.238-05:00  INFO 13324 --- [SysRegistroPolleria] [JavaFX-Launcher] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-21T17:05:12.307-05:00  INFO 13324 --- [SysRegistroPolleria] [JavaFX-Launcher] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-21T17:05:13.054-05:00  INFO 13324 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-21T17:05:13.141-05:00  INFO 13324 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-21T17:05:13.394-05:00  INFO 13324 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@6d645cb6
+2024-11-21T17:05:13.398-05:00  INFO 13324 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-21T17:05:17.217-05:00  INFO 13324 --- [SysRegistroPolleria] [JavaFX-Launcher] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-21T17:05:17.333-05:00  INFO 13324 --- [SysRegistroPolleria] [JavaFX-Launcher] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-21T17:05:18.317-05:00  INFO 13324 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-21T17:05:20.104-05:00  INFO 13324 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : Started application in 14.466 seconds (process running for 17.572)
+2024-11-21T17:06:09.893-05:00  INFO 13324 --- [SysRegistroPolleria] [JavaFX Application Thread] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-21T17:06:09.898-05:00  INFO 13324 --- [SysRegistroPolleria] [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-21T17:06:09.918-05:00  INFO 13324 --- [SysRegistroPolleria] [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-11-21T18:14:44.588-05:00  INFO 8284 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : Starting application using Java 18.0.1.1 with PID 8284 (started by PC in D:\gihud\Trabajo\SysRegistroPolleria)
+2024-11-21T18:14:44.593-05:00  INFO 8284 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : No active profile set, falling back to 1 default profile: "default"
+2024-11-21T18:14:46.713-05:00  INFO 8284 --- [SysRegistroPolleria] [JavaFX-Launcher] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-21T18:14:46.952-05:00  INFO 8284 --- [SysRegistroPolleria] [JavaFX-Launcher] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 226 ms. Found 15 JPA repository interfaces.
+2024-11-21T18:14:48.452-05:00  INFO 8284 --- [SysRegistroPolleria] [JavaFX-Launcher] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-21T18:14:48.567-05:00  INFO 8284 --- [SysRegistroPolleria] [JavaFX-Launcher] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-21T18:14:48.632-05:00  INFO 8284 --- [SysRegistroPolleria] [JavaFX-Launcher] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-21T18:14:49.450-05:00  INFO 8284 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-21T18:14:49.513-05:00  INFO 8284 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-21T18:14:49.932-05:00  INFO 8284 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@4e0a4116
+2024-11-21T18:14:49.938-05:00  INFO 8284 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-21T18:14:53.111-05:00  INFO 8284 --- [SysRegistroPolleria] [JavaFX-Launcher] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-21T18:14:53.194-05:00  INFO 8284 --- [SysRegistroPolleria] [JavaFX-Launcher] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-21T18:14:53.829-05:00  INFO 8284 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-21T18:14:54.982-05:00  INFO 8284 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : Started application in 12.54 seconds (process running for 14.576)
+2024-11-21T18:59:24.980-05:00  INFO 8284 --- [SysRegistroPolleria] [JavaFX Application Thread] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-21T18:59:25.003-05:00  INFO 8284 --- [SysRegistroPolleria] [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-21T18:59:25.014-05:00  INFO 8284 --- [SysRegistroPolleria] [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-11-21T19:12:23.909-05:00  INFO 13464 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : Starting application using Java 18.0.1.1 with PID 13464 (started by PC in D:\gihud\Trabajo\SysRegistroPolleria)
+2024-11-21T19:12:23.915-05:00  INFO 13464 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : No active profile set, falling back to 1 default profile: "default"
+2024-11-21T19:12:25.937-05:00  INFO 13464 --- [SysRegistroPolleria] [JavaFX-Launcher] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-21T19:12:26.174-05:00  INFO 13464 --- [SysRegistroPolleria] [JavaFX-Launcher] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 218 ms. Found 15 JPA repository interfaces.
+2024-11-21T19:12:27.594-05:00  INFO 13464 --- [SysRegistroPolleria] [JavaFX-Launcher] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-21T19:12:27.766-05:00  INFO 13464 --- [SysRegistroPolleria] [JavaFX-Launcher] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-21T19:12:27.880-05:00  INFO 13464 --- [SysRegistroPolleria] [JavaFX-Launcher] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-21T19:12:28.597-05:00  INFO 13464 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-21T19:12:28.663-05:00  INFO 13464 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-21T19:12:29.012-05:00  INFO 13464 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@1af5fffb
+2024-11-21T19:12:29.078-05:00  INFO 13464 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-21T19:12:33.736-05:00  INFO 13464 --- [SysRegistroPolleria] [JavaFX-Launcher] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-21T19:12:33.864-05:00  INFO 13464 --- [SysRegistroPolleria] [JavaFX-Launcher] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-21T19:12:34.870-05:00  INFO 13464 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-21T19:12:36.449-05:00  INFO 13464 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : Started application in 14.518 seconds (process running for 17.258)
+2024-11-21T19:41:33.228-05:00  INFO 13464 --- [SysRegistroPolleria] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-21T19:41:33.238-05:00  INFO 13464 --- [SysRegistroPolleria] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-21T19:41:33.261-05:00  INFO 13464 --- [SysRegistroPolleria] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

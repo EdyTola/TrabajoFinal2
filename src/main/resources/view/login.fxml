@@ -10,7 +10,7 @@
     <children>
         <AnchorPane AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
             <children>
-                <Label layoutX="91.0" layoutY="20.0" text="Login SysAlmacen">
+                <Label layoutX="91.0" layoutY="20.0" text="Login SysPolleria">
                     <font>
                         <Font name="System Bold" size="18.0" />
                     </font>

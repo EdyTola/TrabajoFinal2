@@ -39,7 +39,7 @@ public class SysregistropolleriaApplication extends Application {
 		Scene scene = new Scene(parent);
 		scene.getStylesheets().add(getClass().getResource("/css/styles.css").toExternalForm());
 		stage.setScene(scene);
-		stage.setTitle("SysRegistroPolleria Spring Java-FX");
+		stage.setTitle("SysRegiswtroPolleria Spring Java-FX");
 		stage.setResizable(false);
 		stage.show();
 	}
