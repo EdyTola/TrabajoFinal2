@@ -26,7 +26,7 @@ public class VentCarrito {
     public String nombreProducto;
     @Column(name = "cantidad", nullable = false)
     public Double cantidad;
-    @Column(name = "punitario", nullable = false)
+    @Column(name = "punitario", nullable = false) //id_reserva
     public Double punitario;
     @Column(name = "ptotal", nullable = false)
     public Double ptotal;
@@ -36,5 +36,12 @@ public class VentCarrito {
     @ManyToOne
     @JoinColumn(name = "id_usuario", nullable = false)
     public Usuario usuario;
+
+    //@Table(name = "upeu_menu")  // Asegúrate que esta tabla exista en tu base de datos
+    //public class Menus {
+    //    @Id
+    //    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //    @Column(name = "id_menu")
+    //    private Long idMenu;
 }
 

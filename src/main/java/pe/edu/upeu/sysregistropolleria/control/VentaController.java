@@ -16,6 +16,7 @@ import pe.edu.upeu.sysregistropolleria.modelo.Venta;
 import pe.edu.upeu.sysregistropolleria.modelo.VentaDetalle;
 import pe.edu.upeu.sysregistropolleria.servicio.*;
 
+import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -24,9 +25,9 @@ import java.util.function.Consumer;
 @Component
 public class VentaController {
     @FXML
-    TextField autocompProducto;
+    TextField autocompProducto; //punitPro = cbxReserva, stockPro = cbxPrecio
     @FXML
-    TextField nombreProducto, codigoPro, cantidadPro, txtBaseImp, txtIgv, txtDescuento, txtImporteT;
+    TextField nombreCliente, codigoPro, cbxPrecio, cantidadPro, cbxReserva, preTPro, txtBaseImp, txtIgv, txtDescuento, txtImporteT;
     @FXML
     Button btnRegVenta, btnRegCarrito, btnFormCliente;
     @FXML
@@ -41,7 +42,6 @@ public class VentaController {
     ModeloDataAutocomplet lastProducto;
     AutoCompleteTextField actfC;
     ModeloDataAutocomplet lastCliente;
-
     @Autowired
     ProductoService ps;
     @Autowired
@@ -54,7 +54,6 @@ public class VentaController {
     VentaService daoV;
     @Autowired
     VentaDetalleService daoVD;
-
     Stage stage;
     @FXML
     private AnchorPane miContenedor;
@@ -66,56 +65,77 @@ public class VentaController {
 
 
     @FXML
-    public void initialize() {
+    public void initialize(){
+
         Platform.runLater(() -> {
             stage = (Stage) miContenedor.getScene().getWindow();
             System.out.println("El título del stage es: " + stage.getTitle());
         });
 
         listarCliente();
-        actfC = new AutoCompleteTextField<>(entriesC, autocompCliente);
-        autocompCliente.setOnKeyReleased(e -> {
-            lastCliente = (ModeloDataAutocomplet) actfC.getLastSelectedObject();
-            if (lastCliente != null) {
+        actfC=new AutoCompleteTextField<>(entriesC, autocompCliente);
+        autocompCliente.setOnKeyReleased(e->{
+            lastCliente=(ModeloDataAutocomplet) actfC.getLastSelectedObject();
+            if(lastCliente!=null){
+                System.out.println(lastCliente.getNameDysplay());
                 razonSocial.setText(lastCliente.getNameDysplay());
                 dniRuc.setText(lastCliente.getIdx());
                 listar();
             }
         });
 
-        listarProducto();
+        listarProducto();  // Llenar los productos en 'entries'
+
         actf = new AutoCompleteTextField<>(entries, autocompProducto);
+
         autocompProducto.setOnKeyReleased(e -> {
             lastProducto = (ModeloDataAutocomplet) actf.getLastSelectedObject();
+
             if (lastProducto != null) {
-                nombreProducto.setText(lastProducto.getNameDysplay());
+                // Actualiza el UI
+                System.out.println(lastProducto.getNameDysplay());
+                nombreCliente.setText(lastProducto.getNameDysplay());
                 codigoPro.setText(lastProducto.getIdx());
+
+                // Si 'otherData' es nulo o vacío, lo obtenemos desde la base de datos
+                if (lastProducto.getOtherData() == null || lastProducto.getOtherData().isEmpty()) {
+                    lastProducto.setOtherData(fetchOtherDataFromDB(lastProducto.getIdx()));
+                }
+
+                // Dividir los datos y asignarlos
+                String[] dato = lastProducto.getOtherData().split(":");
+                cbxReserva.setText(dato[0]);
+                cbxPrecio.setText(dato[1]);
             }
         });
+
 
         personalizarTabla();
         btnRegCarrito.setDisable(true);
     }
-
-    public void listarProducto() {
+    public void listarProducto(){
         entries.addAll(ps.listAutoCompletProducto());
     }
-
-    public void listarCliente() {
+    public void listarCliente(){
         entriesC.addAll(cs.listAutoCompletCliente());
     }
 
-    public void personalizarTabla() {
+    public void personalizarTabla(){
+        // Crear instancia de la clase genérica TableViewHelper
         TableViewHelper<VentCarrito> tableViewHelper = new TableViewHelper<>();
+        // Definir las columnas dinámicamente en un mapa (nombre visible -> campo del modelo)
         LinkedHashMap<String, ColumnInfo> columns = new LinkedHashMap<>();
-        columns.put("ID Prod", new ColumnInfo("producto.idProducto", 100.0));
-        columns.put("Nombre Producto", new ColumnInfo("nombreProducto", 300.0));
-        columns.put("Cantidad", new ColumnInfo("cantidad", 60.0));
-        columns.put("P.Unitario", new ColumnInfo("punitario", 100.0));
-        columns.put("P.Total", new ColumnInfo("ptotal", 100.0));
-        Consumer<VentCarrito> updateAction = ventCarrito -> System.out.println("Actualizar: " + ventCarrito);
-        Consumer<VentCarrito> deleteAction = this::deleteReg;
-        tableViewHelper.addColumnsInOrderWithSize(tableView, columns, updateAction, deleteAction);
+        columns.put("ID Prod", new ColumnInfo("producto.idProducto", 100.0)); // Columna visible "Columna 1" mapea al campo "campo1"
+        columns.put("Nombre Cliente", new ColumnInfo("nombreCliente", 300.0)); // Columna visible "Columna 1" mapea al campo "campo1"
+        columns.put("Cantidad", new ColumnInfo("cantidad", 60.0)); // Columna visible "Columna 2" mapea al campo "campo2"
+        columns.put("P.Unitario", new ColumnInfo("punitario", 100.0)); // Columna visible "Columna 2" mapea al campo "campo2"
+        columns.put("P.Total", new ColumnInfo("ptotal", 100.0)); // Columna visible "Columna 2" mapea al campo "campo2"
+        // Definir las acciones de actualizar y eliminar
+        Consumer<VentCarrito> updateAction = (VentCarrito ventCarrito) -> { System.out.println("Actualizar: " + ventCarrito); };
+        Consumer<VentCarrito> deleteAction = (VentCarrito ventCarrito) -> {deleteReg(ventCarrito); };
+        // Usar el helper para agregar las columnas en el orden correcto
+        tableViewHelper.addColumnsInOrderWithSize(tableView, columns,updateAction, deleteAction );
+        // Agregar botones de eliminar y modificar
         tableView.setTableMenuButtonVisible(true);
     }
 
@@ -156,47 +176,37 @@ public class VentaController {
     }
 
     @FXML
-    private void calcularPT() {
-        if (!cantidadPro.getText().isEmpty()) {
-            try {
-                // Obtener el precio unitario del producto desde la base de datos
-                double precioUnitario = ps.getPrecioProducto(Long.parseLong(codigoPro.getText()));
-                double cantidad = Double.parseDouble(cantidadPro.getText());
-
-                // Calcular el precio total
-                double precioTotal = precioUnitario * cantidad;
-
-                // Mostrar precio total en txtImporteT
-                txtImporteT.setText(String.valueOf(precioTotal));
-
-                // Habilitar o deshabilitar el botón según la cantidad
-                btnRegCarrito.setDisable(cantidad <= 0.0);
-            } catch (NumberFormatException | NullPointerException e) {
-                System.out.println("Error al calcular el precio: " + e.getMessage());
+    private void calcularPT(){
+        if(!cantidadPro.getText().equals("")){
+            double dato=Double.parseDouble(cbxReserva.getText())*Double.parseDouble(cantidadPro.getText());
+            preTPro.setText(String.valueOf(dato));
+            if(Double.parseDouble(cantidadPro.getText())>0.0){
+                btnRegCarrito.setDisable(false);
+            }else{
                 btnRegCarrito.setDisable(true);
             }
-        } else {
+        }else{
             btnRegCarrito.setDisable(true);
         }
     }
 
 
     @FXML
-    private void registarPCarrito() {
+    private void registarPCarrito(){
         try {
-            VentCarrito ss = VentCarrito.builder()
+            VentCarrito ss= VentCarrito.builder()
                     .dniruc(dniRuc.getText())
                     .producto(ps.searchById(Long.parseLong(codigoPro.getText())))
-                    .nombreProducto(nombreProducto.getText())
+                    .nombreProducto(nombreCliente.getText())
                     .cantidad(Double.parseDouble(cantidadPro.getText()))
-                    .punitario(ps.getPrecioProducto(Long.parseLong(codigoPro.getText()))) // Obtener desde la base de datos
-                    .ptotal(Double.parseDouble(cantidadPro.getText()) * ps.getPrecioProducto(Long.parseLong(codigoPro.getText())))
+                    .punitario(Double.parseDouble(cbxReserva.getText()))
+                    .ptotal(Double.parseDouble(preTPro.getText()))
                     .estado(1)
                     .usuario(daoU.searchById(SessionManager.getInstance().getUserId()))
                     .build();
             daoC.save(ss);
             listar();
-        } catch (Exception e) {
+        }catch (Exception e){
             System.out.println(e.getMessage());
         }
     }
@@ -253,6 +263,46 @@ public class VentaController {
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
+    }
+
+
+
+    private String fetchOtherDataFromDB(String idProducto) {
+        String result = "default:value";  // Valor predeterminado si no hay datos
+
+        String url = "jdbc:sqlite:D:/gihud/Trabajo/SysRegistroPolleria/data/polleria_dbs.db";
+
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DriverManager.getConnection(url);
+
+            String sql = "SELECT id_reserva, id_precio FROM upeu_ncliente WHERE id_producto = ?";
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, idProducto);
+
+            rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                String idReserva = rs.getString("id_reserva");
+                String idPrecio = rs.getString("id_precio");
+                result = idReserva + ":" + idPrecio;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (stmt != null) stmt.close();
+                if (conn != null) conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return result;
     }
 
 }

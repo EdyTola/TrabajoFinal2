@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Entity
-@Table(name = "upeu_producto")  // Cambiado para reflejar el nombre correcto de la tabla
+@Table(name = "upeu_ncliente")  // Asegúrate que esta tabla exista en tu base de datos
 public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,18 +35,13 @@ public class Producto {
 
     @NotNull(message = "La reserva no puede estar vacía")
     @ManyToOne
-    @JoinColumn(name = "id_reserva", referencedColumnName = "id_reserva",
+    @JoinColumn(name = "id_reserva", referencedColumnName = "id_reserva", // Cambiado a 'id_reserva'
             nullable = false, foreignKey = @ForeignKey(name = "FK_MARCA_PRODUCTO"))
     private Reserva reserva; // MARCA
 
-    @NotNull(message = "El precio no puede estar vacío")
+    @NotNull(message = "El precio no puede estar vacía")
     @ManyToOne
     @JoinColumn(name = "id_precio", referencedColumnName = "id_precio",
             nullable = false, foreignKey = @ForeignKey(name = "FK_UNIDADMEDIDA_PRODUCTO"))
-    private Precio precio; // Unidad de Medida del precio
-
-    // Método para obtener el precio unitario directamente
-    public double getPrecioUnitario() {
-        return (precio != null) ? precio.getPrecio() : 0.0;
-    }
+    private Precio precio; //unidadMedida
 }

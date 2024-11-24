@@ -27,20 +27,20 @@
                         <Font size="18.0" />
                     </font>
                 </Label>
-                <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Producto:" GridPane.rowIndex="1" />
+                <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Cliente" GridPane.rowIndex="1" />
                 <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Precio:" GridPane.columnIndex="2" GridPane.rowIndex="1">
                     <padding>
                         <Insets left="5.0" />
                     </padding>
                 </Label>
-                <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Stock:" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Menu:" GridPane.columnIndex="4" GridPane.rowIndex="1">
                     <padding>
                         <Insets left="5.0" />
                     </padding>
                 </Label>
-                <TextField fx:id="txtBuscarProd" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="txtBuscarCliente" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                 <TextField fx:id="txtPrecio" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                <TextField fx:id="txtStock" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                <TextField fx:id="txtMenu" GridPane.columnIndex="5" GridPane.rowIndex="1" />
             </children>
         </GridPane>
     </children>

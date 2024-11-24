@@ -21,11 +21,10 @@ public class ProdAutoCompControl {
     ProductoService ps;
 
     @FXML
-    TextField txtBuscarProd, txtPrecio, txtStock;
+        TextField txtBuscarCliente, txtPrecio, txtMenu;
 
     AutoCompleteTextField actf;
-    private final SortedSet<ModeloDataAutocomplet> entries = new TreeSet<>((ModeloDataAutocomplet o1, ModeloDataAutocomplet o2) ->
-            o1.toString().compareTo(o2.toString()));
+    private final SortedSet<ModeloDataAutocomplet> entries = new TreeSet<>((ModeloDataAutocomplet o1, ModeloDataAutocomplet o2) -> o1.toString().compareTo(o2.toString()));
 
     Stage stage;
     @FXML
@@ -41,15 +40,15 @@ public class ProdAutoCompControl {
         });
 
         listarProducto();
-        actf=new AutoCompleteTextField<>(entries, txtBuscarProd);
+        actf=new AutoCompleteTextField<>(entries, txtBuscarCliente);
 
-        txtBuscarProd.setOnKeyReleased(e->{
+        txtBuscarCliente.setOnKeyReleased(e->{
             lastProducto=(ModeloDataAutocomplet) actf.getLastSelectedObject();
             if(lastProducto!=null){
                 System.out.println(lastProducto.getNameDysplay());
                 String[] dato=lastProducto.getOtherData().split(":");
                 txtPrecio.setText(dato[0]);
-                txtStock.setText(dato[1]);
+                txtMenu.setText(dato[1]);
             }
         });
     }

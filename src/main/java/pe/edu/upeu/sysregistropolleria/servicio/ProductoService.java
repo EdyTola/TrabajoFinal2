@@ -15,8 +15,7 @@ import java.util.List;
 public class ProductoService {
 
     @Autowired
-    private ProductoRepository repo;
-
+    ProductoRepository repo;
     Logger logger = LoggerFactory.getLogger(ProductoService.class);
 
     public Producto save(Producto to) {
@@ -69,15 +68,6 @@ public class ProductoService {
             logger.error("Error al realizar la búsqueda", e);
         }
         return listarProducto;
-    }
-
-    // Método que obtiene el precio unitario del producto
-    public double getPrecioProducto(Long idProducto) {
-        Producto producto = repo.findById(idProducto).orElse(null);
-        if (producto != null && producto.getPrecio() != null) {
-            return producto.getPrecio().getPrecio(); // Aquí accedemos a la entidad Precio
-        }
-        return 0.0; // Devuelve 0 si no se encuentra el producto o si no tiene precio
     }
 }
 

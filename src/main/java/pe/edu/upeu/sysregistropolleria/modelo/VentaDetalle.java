@@ -17,7 +17,7 @@ public class VentaDetalle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_venta_detalle")
     private Long idVentaDetalle;
-    @Column(name = "pu", nullable = false)
+    @Column(name = "pu", nullable = false)//id_reserva
     private Double pu;
     @Column(name = "cantidad", nullable = false)
     private Double cantidad;
@@ -37,4 +37,14 @@ public class VentaDetalle {
             nullable = false, foreignKey = @ForeignKey(name =
             "FK_PRODUCTO_VENTADETALLE"))
     private Producto producto;
+
+    //@Table(name = "upeu_reserva")  // Asegúrate que esta tabla exista en tu base de datos
+    //public class Reserva {
+    //    @Id
+    //    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //    @Column(name = "id_reserva")
+    //    private Long idReserva;
+    //
+    //    @Column(name = "nombre", nullable = false, length = 100)
+    //    private String nombre;
 }

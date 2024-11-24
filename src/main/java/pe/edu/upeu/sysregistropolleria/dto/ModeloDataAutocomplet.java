@@ -11,10 +11,12 @@ public class ModeloDataAutocomplet {
     String idx;
     String nameDysplay;
     String otherData;
+
     @Override
     public String toString() {
-        return nameDysplay+" "+idx+" " + otherData;
+        return nameDysplay + " " + idx + " " + otherData;
     }
 }
+
 
 

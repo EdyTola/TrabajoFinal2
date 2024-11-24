@@ -3,9 +3,7 @@ package pe.edu.upeu.sysregistropolleria.componente;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Side;
-import javafx.scene.control.ContextMenu;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.VBox;
 
@@ -22,7 +20,7 @@ public class AutoCompleteTextField<T>{
     public AutoCompleteTextField(SortedSet<T> entries, TextField autTF) {
         this.entries = entries;
         this.autoCompleteTextField=autTF;
-        //this.autoCompleteTextField.setOnKeyReleased(this::handleKeyReleased);
+        this.autoCompleteTextField.setOnKeyReleased(this::handleKeyReleased);
         this.autoCompleteTextField.setOnKeyTyped(this::handleKeyReleased);
     }
 
@@ -42,7 +40,7 @@ public class AutoCompleteTextField<T>{
                 .filter(e -> e.toString().toLowerCase().contains(input))
                 .forEach(entry -> {
                     MenuItem item = new MenuItem(entry.toString());
-                    //vbox.getChildren().add(new Button(item.getText()));
+                    vbox.getChildren().add(new Button(item.getText()));
                     item.setOnAction(e -> {
                         this.autoCompleteTextField.setText(entry.toString());
                         lastSelectedObject = entry;
@@ -52,11 +50,11 @@ public class AutoCompleteTextField<T>{
                     menuItems.add(item);
                     entryMenu.hide();
                 });
-        /*ScrollPane scrollPane = new ScrollPane(vbox);
+        ScrollPane scrollPane = new ScrollPane(vbox);
         scrollPane.setPrefHeight(150); // Altura del área de scroll
         scrollPane.setFitToWidth(true);
         CustomMenuItem scrollableItem = new CustomMenuItem(scrollPane, false);
-        entryMenu.getItems().setAll(scrollableItem);*/
+        entryMenu.getItems().setAll(scrollableItem);
         entryMenu.getItems().setAll(menuItems);
         if (!menuItems.isEmpty()) {
             entryMenu.show(this.autoCompleteTextField, Side.BOTTOM, 0, 0);

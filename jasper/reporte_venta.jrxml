@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.3.final using JasperReports Library version 6.21.3-4a3078d20785ebe464f18037d738d12fc98c13cf  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b09fdfbd-dc85-4e13-8ed1-57114172fb2e">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="polleria_dbs"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<style name="table">
 		<box>
 			<pen lineWidth="1.0" lineColor="#000000"/>
@@ -48,11 +51,56 @@
 	<queryString>
 		<![CDATA[select * from upeu_venta]]>
 	</queryString>
-	<field name="id_venta" class="java.lang.Object"/>
-	<field name="preciobase" class="java.lang.Object"/>
-	<field name="igv" class="java.lang.Object"/>
-	<field name="preciototal" class="java.lang.Object"/>
-	<field name="dniruc" class="java.lang.Object"/>
+	<field name="id_venta" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id_venta"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_venta"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="upeu_venta"/>
+	</field>
+	<field name="fecha_gener" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="fecha_gener"/>
+		<property name="com.jaspersoft.studio.field.label" value="fecha_gener"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="upeu_venta"/>
+	</field>
+	<field name="igv" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="igv"/>
+		<property name="com.jaspersoft.studio.field.label" value="igv"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="upeu_venta"/>
+	</field>
+	<field name="num_doc" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="num_doc"/>
+		<property name="com.jaspersoft.studio.field.label" value="num_doc"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="upeu_venta"/>
+	</field>
+	<field name="preciobase" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="preciobase"/>
+		<property name="com.jaspersoft.studio.field.label" value="preciobase"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="upeu_venta"/>
+	</field>
+	<field name="preciototal" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="preciototal"/>
+		<property name="com.jaspersoft.studio.field.label" value="preciototal"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="upeu_venta"/>
+	</field>
+	<field name="serie" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="serie"/>
+		<property name="com.jaspersoft.studio.field.label" value="serie"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="upeu_venta"/>
+	</field>
+	<field name="tipo_doc" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="tipo_doc"/>
+		<property name="com.jaspersoft.studio.field.label" value="tipo_doc"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="upeu_venta"/>
+	</field>
+	<field name="dniruc" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dniruc"/>
+		<property name="com.jaspersoft.studio.field.label" value="dniruc"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="upeu_venta"/>
+	</field>
+	<field name="id_usuario" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id_usuario"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_usuario"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="upeu_venta"/>
+	</field>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
