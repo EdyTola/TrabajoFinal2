@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="miContenedor" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.sysregistropolleria.control.VentaController">
+<AnchorPane fx:id="miContenedor" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #F5F5DC;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.sysregistropolleria.control.VentaController">
    <children>
       <AnchorPane layoutX="14.0" layoutY="14.0" maxWidth="1.7976931348623157E308" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
          <children>
@@ -27,7 +27,7 @@
                      </GridPane.margin>
                   </Label>
                   <TextField fx:id="autocompCliente" GridPane.rowIndex="1" />
-                  <Button fx:id="btnFormCliente" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="61.0" prefWidth="64.0" text="Add" GridPane.columnIndex="1" GridPane.rowSpan="2">
+                  <Button fx:id="btnFormCliente" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="61.0" prefWidth="64.0" style="-fx-background-color: #50C878;" text="Add" GridPane.columnIndex="1" GridPane.rowSpan="2">
                      <GridPane.margin>
                         <Insets left="5.0" />
                      </GridPane.margin>
@@ -106,7 +106,7 @@
                      <GridPane.margin>
                         <Insets left="5.0" />
                      </GridPane.margin></Label>
-                  <Label text="Stock" GridPane.columnIndex="3">
+                  <Label text="Precio" GridPane.columnIndex="3">
                      <GridPane.margin>
                         <Insets left="5.0" />
                      </GridPane.margin></Label>
@@ -125,7 +125,7 @@
                         <Insets left="5.0" />
                      </GridPane.margin>
                   </Label>
-                  <Label text="P.Unit" GridPane.columnIndex="5">
+                  <Label text="Reserva" GridPane.columnIndex="5">
                      <GridPane.margin>
                         <Insets left="5.0" />
                      </GridPane.margin>
@@ -150,7 +150,7 @@
                         <Insets left="5.0" />
                      </GridPane.margin>
                   </TextField>
-                  <Button fx:id="btnRegCarrito" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#registarPCarrito" prefWidth="57.0" text="Add" GridPane.columnIndex="7" GridPane.rowSpan="2">
+                  <Button fx:id="btnRegCarrito" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#registarPCarrito" prefWidth="57.0" style="-fx-background-color: #50C878;" text="Add" GridPane.columnIndex="7" GridPane.rowSpan="2">
                      <GridPane.margin>
                         <Insets left="5.0" />
                      </GridPane.margin></Button>
@@ -165,7 +165,7 @@
             <TableView fx:id="tableView" layoutX="7.0" maxWidth="1.7976931348623157E308" prefHeight="200.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="5.0" layoutY="356.0" maxWidth="1.7976931348623157E308" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+      <AnchorPane layoutX="5.0" layoutY="356.0" maxWidth="1.7976931348623157E308" style="-fx-background-color: #F5F5DC;" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
          <children>
             <GridPane layoutX="14.0" maxWidth="1.7976931348623157E308" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
               <columnConstraints>
@@ -200,7 +200,7 @@
                         <Insets left="5.0" />
                      </GridPane.margin>
                   </Label>
-                  <Button fx:id="btnRegVenta" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#registrarVenta" text="R. Venta" GridPane.columnIndex="4" GridPane.rowSpan="2" />
+                  <Button fx:id="btnRegVenta" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#registrarVenta" style="-fx-background-color: #50C878;" text="R. Venta" GridPane.columnIndex="4" GridPane.rowSpan="2" />
                   <TextField fx:id="txtBaseImp" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets left="5.0" />

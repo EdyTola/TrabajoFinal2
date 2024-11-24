@@ -191,3 +191,179 @@ java.lang.IllegalStateException: Cannot read from unreadable property nombreClie
 2024-11-24T01:55:32.537-05:00  INFO 9032 --- [SysRegistroPolleria] [JavaFX Application Thread] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-11-24T01:55:32.541-05:00  INFO 9032 --- [SysRegistroPolleria] [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-11-24T01:55:32.557-05:00  INFO 9032 --- [SysRegistroPolleria] [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-11-24T02:00:08.885-05:00  INFO 17260 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : Starting application using Java 18.0.1.1 with PID 17260 (started by PC in D:\gihud\Trabajo\SysRegistroPolleria)
+2024-11-24T02:00:08.894-05:00  INFO 17260 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : No active profile set, falling back to 1 default profile: "default"
+2024-11-24T02:00:11.290-05:00  INFO 17260 --- [SysRegistroPolleria] [JavaFX-Launcher] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-24T02:00:11.805-05:00  INFO 17260 --- [SysRegistroPolleria] [JavaFX-Launcher] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 487 ms. Found 15 JPA repository interfaces.
+2024-11-24T02:00:13.890-05:00  INFO 17260 --- [SysRegistroPolleria] [JavaFX-Launcher] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-24T02:00:14.181-05:00  INFO 17260 --- [SysRegistroPolleria] [JavaFX-Launcher] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-24T02:00:14.367-05:00  INFO 17260 --- [SysRegistroPolleria] [JavaFX-Launcher] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-24T02:00:15.603-05:00  INFO 17260 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-24T02:00:15.797-05:00  INFO 17260 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-24T02:00:16.180-05:00  INFO 17260 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@c0095ff
+2024-11-24T02:00:16.185-05:00  INFO 17260 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-24T02:00:21.904-05:00  INFO 17260 --- [SysRegistroPolleria] [JavaFX-Launcher] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-24T02:00:22.017-05:00  INFO 17260 --- [SysRegistroPolleria] [JavaFX-Launcher] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-24T02:00:22.965-05:00  INFO 17260 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-24T02:00:25.074-05:00  INFO 17260 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : Started application in 18.612 seconds (process running for 20.971)
+2024-11-24T02:03:07.901-05:00  WARN 17260 --- [SysRegistroPolleria] [JavaFX Application Thread] javafx.scene.control                     : Can not retrieve property 'nombreCliente' in PropertyValueFactory: javafx.scene.control.cell.PropertyValueFactory@2f7786df with provided class type: class pe.edu.upeu.sysregistropolleria.modelo.VentCarrito
+
+java.lang.IllegalStateException: Cannot read from unreadable property nombreCliente
+	at com.sun.javafx.property.PropertyReference.get(PropertyReference.java:170) ~[javafx-base-16-win.jar:na]
+	at javafx.scene.control.cell.PropertyValueFactory.getCellDataReflectively(PropertyValueFactory.java:184) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.cell.PropertyValueFactory.call(PropertyValueFactory.java:154) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.cell.PropertyValueFactory.call(PropertyValueFactory.java:133) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.TableColumn.getCellObservableValue(TableColumn.java:593) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.TableColumn.getCellObservableValue(TableColumn.java:578) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.TableCell.updateItem(TableCell.java:646) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.TableCell.indexChanged(TableCell.java:469) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.IndexedCell.updateIndex(IndexedCell.java:120) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.skin.TableRowSkinBase.updateCells(TableRowSkinBase.java:539) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.skin.TableRowSkinBase.<init>(TableRowSkinBase.java:159) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.skin.TableRowSkin.<init>(TableRowSkin.java:89) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.TableRow.createDefaultSkin(TableRow.java:213) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.Control.doProcessCSS(Control.java:897) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.Control$1.doProcessCSS(Control.java:89) ~[javafx-controls-16-win.jar:na]
+	at com.sun.javafx.scene.control.ControlHelper.processCSSImpl(ControlHelper.java:67) ~[javafx-controls-16-win.jar:na]
+	at com.sun.javafx.scene.NodeHelper.processCSS(NodeHelper.java:145) ~[javafx-graphics-16-win.jar:na]
+	at javafx.scene.Node.processCSS(Node.java:9547) ~[javafx-graphics-16-win.jar:na]
+	at javafx.scene.Node.applyCss(Node.java:9634) ~[javafx-graphics-16-win.jar:na]
+	at javafx.scene.control.skin.VirtualFlow.setCellIndex(VirtualFlow.java:1743) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.skin.VirtualFlow.getCell(VirtualFlow.java:1720) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.skin.VirtualFlow.getCellLength(VirtualFlow.java:1846) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.skin.VirtualFlow.computeViewportOffset(VirtualFlow.java:2758) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.skin.VirtualFlow.layoutChildren(VirtualFlow.java:1239) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.Parent.layout(Parent.java:1207) ~[javafx-graphics-16-win.jar:na]
+	at javafx.scene.Parent.layout(Parent.java:1214) ~[javafx-graphics-16-win.jar:na]
+	at javafx.scene.Parent.layout(Parent.java:1214) ~[javafx-graphics-16-win.jar:na]
+	at javafx.scene.Parent.layout(Parent.java:1214) ~[javafx-graphics-16-win.jar:na]
+	at javafx.scene.Parent.layout(Parent.java:1214) ~[javafx-graphics-16-win.jar:na]
+	at javafx.scene.Parent.layout(Parent.java:1214) ~[javafx-graphics-16-win.jar:na]
+	at javafx.scene.Parent.layout(Parent.java:1214) ~[javafx-graphics-16-win.jar:na]
+	at javafx.scene.Parent.layout(Parent.java:1214) ~[javafx-graphics-16-win.jar:na]
+	at javafx.scene.Parent.layout(Parent.java:1214) ~[javafx-graphics-16-win.jar:na]
+	at javafx.scene.Parent.layout(Parent.java:1214) ~[javafx-graphics-16-win.jar:na]
+	at javafx.scene.Scene.doLayoutPass(Scene.java:576) ~[javafx-graphics-16-win.jar:na]
+	at javafx.scene.Scene$ScenePulseListener.pulse(Scene.java:2476) ~[javafx-graphics-16-win.jar:na]
+	at com.sun.javafx.tk.Toolkit.lambda$runPulse$2(Toolkit.java:413) ~[javafx-graphics-16-win.jar:na]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399) ~[na:na]
+	at com.sun.javafx.tk.Toolkit.runPulse(Toolkit.java:412) ~[javafx-graphics-16-win.jar:na]
+	at com.sun.javafx.tk.Toolkit.firePulse(Toolkit.java:439) ~[javafx-graphics-16-win.jar:na]
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:563) ~[javafx-graphics-16-win.jar:na]
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:543) ~[javafx-graphics-16-win.jar:na]
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulseFromQueue(QuantumToolkit.java:536) ~[javafx-graphics-16-win.jar:na]
+	at com.sun.javafx.tk.quantum.QuantumToolkit.lambda$runToolkit$11(QuantumToolkit.java:342) ~[javafx-graphics-16-win.jar:na]
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96) ~[javafx-graphics-16-win.jar:na]
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx-graphics-16-win.jar:na]
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:174) ~[javafx-graphics-16-win.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2024-11-24T02:05:44.071-05:00  INFO 17260 --- [SysRegistroPolleria] [JavaFX Application Thread] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-24T02:05:44.074-05:00  INFO 17260 --- [SysRegistroPolleria] [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-24T02:05:44.090-05:00  INFO 17260 --- [SysRegistroPolleria] [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-11-24T02:06:13.024-05:00  INFO 11744 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : Starting application using Java 18.0.1.1 with PID 11744 (started by PC in D:\gihud\Trabajo\SysRegistroPolleria)
+2024-11-24T02:06:13.029-05:00  INFO 11744 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : No active profile set, falling back to 1 default profile: "default"
+2024-11-24T02:06:15.296-05:00  INFO 11744 --- [SysRegistroPolleria] [JavaFX-Launcher] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-24T02:06:15.675-05:00  INFO 11744 --- [SysRegistroPolleria] [JavaFX-Launcher] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 366 ms. Found 15 JPA repository interfaces.
+2024-11-24T02:06:17.199-05:00  INFO 11744 --- [SysRegistroPolleria] [JavaFX-Launcher] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-24T02:06:17.336-05:00  INFO 11744 --- [SysRegistroPolleria] [JavaFX-Launcher] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-24T02:06:17.450-05:00  INFO 11744 --- [SysRegistroPolleria] [JavaFX-Launcher] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-24T02:06:18.093-05:00  INFO 11744 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-24T02:06:18.152-05:00  INFO 11744 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-24T02:06:18.549-05:00  INFO 11744 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@16dc7109
+2024-11-24T02:06:18.553-05:00  INFO 11744 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-24T02:06:22.136-05:00  INFO 11744 --- [SysRegistroPolleria] [JavaFX-Launcher] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-24T02:06:22.288-05:00  INFO 11744 --- [SysRegistroPolleria] [JavaFX-Launcher] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-24T02:06:23.392-05:00  INFO 11744 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-24T02:06:24.874-05:00  INFO 11744 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : Started application in 14.171 seconds (process running for 16.233)
+2024-11-24T02:07:12.956-05:00  WARN 11744 --- [SysRegistroPolleria] [JavaFX Application Thread] javafx.scene.control                     : Can not retrieve property 'nombreCliente' in PropertyValueFactory: javafx.scene.control.cell.PropertyValueFactory@177cb321 with provided class type: class pe.edu.upeu.sysregistropolleria.modelo.VentCarrito
+
+java.lang.IllegalStateException: Cannot read from unreadable property nombreCliente
+	at com.sun.javafx.property.PropertyReference.get(PropertyReference.java:170) ~[javafx-base-16-win.jar:na]
+	at javafx.scene.control.cell.PropertyValueFactory.getCellDataReflectively(PropertyValueFactory.java:184) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.cell.PropertyValueFactory.call(PropertyValueFactory.java:154) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.cell.PropertyValueFactory.call(PropertyValueFactory.java:133) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.TableColumn.getCellObservableValue(TableColumn.java:593) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.TableColumn.getCellObservableValue(TableColumn.java:578) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.TableCell.updateItem(TableCell.java:646) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.TableCell.indexChanged(TableCell.java:469) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.IndexedCell.updateIndex(IndexedCell.java:120) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.skin.TableRowSkinBase.updateCells(TableRowSkinBase.java:539) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.skin.TableRowSkinBase.<init>(TableRowSkinBase.java:159) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.skin.TableRowSkin.<init>(TableRowSkin.java:89) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.TableRow.createDefaultSkin(TableRow.java:213) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.Control.doProcessCSS(Control.java:897) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.Control$1.doProcessCSS(Control.java:89) ~[javafx-controls-16-win.jar:na]
+	at com.sun.javafx.scene.control.ControlHelper.processCSSImpl(ControlHelper.java:67) ~[javafx-controls-16-win.jar:na]
+	at com.sun.javafx.scene.NodeHelper.processCSS(NodeHelper.java:145) ~[javafx-graphics-16-win.jar:na]
+	at javafx.scene.Node.processCSS(Node.java:9547) ~[javafx-graphics-16-win.jar:na]
+	at javafx.scene.Node.applyCss(Node.java:9634) ~[javafx-graphics-16-win.jar:na]
+	at javafx.scene.control.skin.VirtualFlow.setCellIndex(VirtualFlow.java:1743) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.skin.VirtualFlow.getCell(VirtualFlow.java:1720) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.skin.VirtualFlow.getCellLength(VirtualFlow.java:1846) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.skin.VirtualFlow.computeViewportOffset(VirtualFlow.java:2758) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.control.skin.VirtualFlow.layoutChildren(VirtualFlow.java:1239) ~[javafx-controls-16-win.jar:na]
+	at javafx.scene.Parent.layout(Parent.java:1207) ~[javafx-graphics-16-win.jar:na]
+	at javafx.scene.Parent.layout(Parent.java:1214) ~[javafx-graphics-16-win.jar:na]
+	at javafx.scene.Parent.layout(Parent.java:1214) ~[javafx-graphics-16-win.jar:na]
+	at javafx.scene.Parent.layout(Parent.java:1214) ~[javafx-graphics-16-win.jar:na]
+	at javafx.scene.Parent.layout(Parent.java:1214) ~[javafx-graphics-16-win.jar:na]
+	at javafx.scene.Parent.layout(Parent.java:1214) ~[javafx-graphics-16-win.jar:na]
+	at javafx.scene.Parent.layout(Parent.java:1214) ~[javafx-graphics-16-win.jar:na]
+	at javafx.scene.Parent.layout(Parent.java:1214) ~[javafx-graphics-16-win.jar:na]
+	at javafx.scene.Parent.layout(Parent.java:1214) ~[javafx-graphics-16-win.jar:na]
+	at javafx.scene.Parent.layout(Parent.java:1214) ~[javafx-graphics-16-win.jar:na]
+	at javafx.scene.Scene.doLayoutPass(Scene.java:576) ~[javafx-graphics-16-win.jar:na]
+	at javafx.scene.Scene$ScenePulseListener.pulse(Scene.java:2476) ~[javafx-graphics-16-win.jar:na]
+	at com.sun.javafx.tk.Toolkit.lambda$runPulse$2(Toolkit.java:413) ~[javafx-graphics-16-win.jar:na]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399) ~[na:na]
+	at com.sun.javafx.tk.Toolkit.runPulse(Toolkit.java:412) ~[javafx-graphics-16-win.jar:na]
+	at com.sun.javafx.tk.Toolkit.firePulse(Toolkit.java:439) ~[javafx-graphics-16-win.jar:na]
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:563) ~[javafx-graphics-16-win.jar:na]
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:543) ~[javafx-graphics-16-win.jar:na]
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulseFromQueue(QuantumToolkit.java:536) ~[javafx-graphics-16-win.jar:na]
+	at com.sun.javafx.tk.quantum.QuantumToolkit.lambda$runToolkit$11(QuantumToolkit.java:342) ~[javafx-graphics-16-win.jar:na]
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96) ~[javafx-graphics-16-win.jar:na]
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx-graphics-16-win.jar:na]
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:174) ~[javafx-graphics-16-win.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2024-11-24T02:13:30.664-05:00  INFO 11744 --- [SysRegistroPolleria] [JavaFX Application Thread] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-24T02:13:30.670-05:00  INFO 11744 --- [SysRegistroPolleria] [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-24T02:13:30.799-05:00  INFO 11744 --- [SysRegistroPolleria] [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-11-24T02:19:34.242-05:00  INFO 14436 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : Starting application using Java 18.0.1.1 with PID 14436 (started by PC in D:\gihud\Trabajo\SysRegistroPolleria)
+2024-11-24T02:19:34.248-05:00  INFO 14436 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : No active profile set, falling back to 1 default profile: "default"
+2024-11-24T02:19:36.661-05:00  INFO 14436 --- [SysRegistroPolleria] [JavaFX-Launcher] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-24T02:19:36.933-05:00  INFO 14436 --- [SysRegistroPolleria] [JavaFX-Launcher] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 257 ms. Found 15 JPA repository interfaces.
+2024-11-24T02:19:38.438-05:00  INFO 14436 --- [SysRegistroPolleria] [JavaFX-Launcher] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-24T02:19:38.636-05:00  INFO 14436 --- [SysRegistroPolleria] [JavaFX-Launcher] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-24T02:19:38.751-05:00  INFO 14436 --- [SysRegistroPolleria] [JavaFX-Launcher] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-24T02:19:39.952-05:00  INFO 14436 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-24T02:19:40.064-05:00  INFO 14436 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-24T02:19:40.545-05:00  INFO 14436 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@3209a7f9
+2024-11-24T02:19:40.553-05:00  INFO 14436 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-24T02:19:45.882-05:00  INFO 14436 --- [SysRegistroPolleria] [JavaFX-Launcher] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-24T02:19:45.998-05:00  INFO 14436 --- [SysRegistroPolleria] [JavaFX-Launcher] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-24T02:19:46.946-05:00  INFO 14436 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-24T02:19:48.527-05:00  INFO 14436 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : Started application in 16.589 seconds (process running for 19.221)
+2024-11-24T02:21:07.131-05:00  INFO 14436 --- [SysRegistroPolleria] [JavaFX Application Thread] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-24T02:21:07.137-05:00  INFO 14436 --- [SysRegistroPolleria] [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-24T02:21:07.186-05:00  INFO 14436 --- [SysRegistroPolleria] [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-11-24T02:21:33.527-05:00  INFO 16288 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : Starting application using Java 18.0.1.1 with PID 16288 (started by PC in D:\gihud\Trabajo\SysRegistroPolleria)
+2024-11-24T02:21:33.536-05:00  INFO 16288 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : No active profile set, falling back to 1 default profile: "default"
+2024-11-24T02:21:36.034-05:00  INFO 16288 --- [SysRegistroPolleria] [JavaFX-Launcher] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-24T02:21:36.365-05:00  INFO 16288 --- [SysRegistroPolleria] [JavaFX-Launcher] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 302 ms. Found 15 JPA repository interfaces.
+2024-11-24T02:21:38.041-05:00  INFO 16288 --- [SysRegistroPolleria] [JavaFX-Launcher] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-24T02:21:38.194-05:00  INFO 16288 --- [SysRegistroPolleria] [JavaFX-Launcher] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-24T02:21:38.329-05:00  INFO 16288 --- [SysRegistroPolleria] [JavaFX-Launcher] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-24T02:21:39.626-05:00  INFO 16288 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-24T02:21:39.756-05:00  INFO 16288 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-24T02:21:40.425-05:00  INFO 16288 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@549ac8e4
+2024-11-24T02:21:40.432-05:00  INFO 16288 --- [SysRegistroPolleria] [JavaFX-Launcher] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-24T02:21:46.238-05:00  INFO 16288 --- [SysRegistroPolleria] [JavaFX-Launcher] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-24T02:21:46.359-05:00  INFO 16288 --- [SysRegistroPolleria] [JavaFX-Launcher] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-24T02:21:47.194-05:00  INFO 16288 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-24T02:21:48.935-05:00  INFO 16288 --- [SysRegistroPolleria] [JavaFX-Launcher] o.s.boot.SpringApplication               : Started application in 17.628 seconds (process running for 20.162)
+2024-11-24T02:23:27.643-05:00  INFO 16288 --- [SysRegistroPolleria] [JavaFX Application Thread] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-24T02:23:27.649-05:00  INFO 16288 --- [SysRegistroPolleria] [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-24T02:23:27.667-05:00  INFO 16288 --- [SysRegistroPolleria] [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

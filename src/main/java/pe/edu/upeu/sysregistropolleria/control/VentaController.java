@@ -126,7 +126,7 @@ public class VentaController {
         // Definir las columnas dinámicamente en un mapa (nombre visible -> campo del modelo)
         LinkedHashMap<String, ColumnInfo> columns = new LinkedHashMap<>();
         columns.put("ID Prod", new ColumnInfo("producto.idProducto", 100.0)); // Columna visible "Columna 1" mapea al campo "campo1"
-        columns.put("Nombre Cliente", new ColumnInfo("nombreCliente", 300.0)); // Columna visible "Columna 1" mapea al campo "campo1"
+        columns.put("Nombre Producto", new ColumnInfo("nombreProducto", 300.0)); // Columna visible "Columna 1" mapea al campo "campo1"
         columns.put("Cantidad", new ColumnInfo("cantidad", 60.0)); // Columna visible "Columna 2" mapea al campo "campo2"
         columns.put("P.Unitario", new ColumnInfo("punitario", 100.0)); // Columna visible "Columna 2" mapea al campo "campo2"
         columns.put("P.Total", new ColumnInfo("ptotal", 100.0)); // Columna visible "Columna 2" mapea al campo "campo2"
